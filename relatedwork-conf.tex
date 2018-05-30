@@ -1,0 +1,48 @@
+\section{Related Work}
+\label{sec:related}
+
+ A increasingly large body of work has focused on the problem of key grouping (or Group By). There are two categories of GroupBy implementations ingeneral, sort-based grouping and hash-based grouping. Each of these algorithms can be used for anywhere in database query related to grouping (Group By, SUM, AVE, etc) \cite{Hellerstein1996Query}. This section provides some backgrounds on existing key grouping approaches and the power-law distributions used in our algorithm. Section A introduces the merge-sort grouping algorithm and Section B provides a detailed description on memory-constraint hash algorithm for SQL Hash GroupBy clause,  Section C and D introduces the power-law distributions  and the count-min sketch. 
+
+\subsection{Merge-Sort Grouping Algorithm}%2.1
+One of the most widely used key grouping algorithm is merge-sort grouping algorithm widely used in MapReduce \cite{dean2008mapreduce} and SQL Group By operator \cite{nasir2015power},\cite{mysql2009mysql},\cite{boicea2012mongodb},\cite{momjian2001postgresql},\cite{agrawal2005database}.
+
+The Distributed Computing Framework MapReduce uses a merge-sort at both the Map and Reduce phases to group kv-pairs. These kv-pairs to be grouped will be constantly written to the memory buffer. The buffer is used to collect kv-pairs in batches, so as to minimize the impact of disk I/O. The entire buffer size is limited and when the amount of data in the buffer reaches the threshold, the background spilled thread sorts these kv-pairs in the memory buffer in accordance with the key, and writes these kv-pairs have sorted in the buffer to disk as a partial grouping file. Each spilling operation generates a spilled file on disk. Finally, a merge phase is required to sort these partial grouping files to generate the final grouping file.
+
+In SQL database, The default Group By implementation is to scan the entire table, e.g. group records in table by merge-sort algorithm or make use of index based on columns specified by Group By clause to avoid sorting again \cite{mysql2009mysql}. Sorting is never  the  best, except  when  tables  are ordered  in  advance  or  when the  result  have  to  be sorted  on operation  key \cite{Bratbergsengen1984Hashing}.
+
+Merge-sort can achieve the purpose of aggregating kv-pairs for any amount of data, has no data distribution dependency and is highly scalable. However, the execution efficiency is not high enough. The merge-sort algorithm aggregates kv-pairs with the same key by sorting key completely, so that the grouping keys are ordered among different groups. Commonly, keeping different groups in order is redundant because the aim of grouping is to store kv-pairs having the same key on adjacent locations on the disk, and it¡¯s irrelevant Whether grouping keys are sorted between two groups. Therefore, merge-sort for aggregating kv-pairs will result in unnecessary computational overhead. on the other hand, the amount of memory required for sorting is proportional to the total number of kv-pairs in the buffer rather than the number of distinct keys.
+
+\subsection{Memory-Constraint Hash Grouping in SQL database}%2.2
+Group By is frequently used in relation database such as MySQL. MariaDB that a branch of the MySQL database has a hash grouping aggregation strategy for Group By query operations \cite{bartholomew2012mariadb}. We refer to this approach as \emph{memory-constraint hash grouping}. 
+
+In general, the hash-based grouping creates an in-memory hash table for grouping rows, kv-pairs are then hashed by key and accumulated. Finally, the aggregated results are saved in hash table. memory-constraint hash is similar to hash join, it does not require sort but more memory. Memory-constraint hash partitions  the  larger  task  into smaller  subtasks  where  the  subtasks can  be executed in memory completely \cite{Bratbergsengen1984Hashing},\cite{HashAggregate15}. If the size of data to be grouped exceeds the memory threshold, one or more partitions or buckets including any partial aggregated results along with any additional new rows that hash to the spilled buckets or partitions will be spilled to disk. These new rows that hash to the spilled partitions will be divided up into the partitions that they belong to although won't be aggregated temporarily. Once all input groups have been processed, the completed in-memory groups will be output and repeat the algorithm by reading back and aggregating one spilled partition at a time.
+Compared to merge-sort, memory-constraint hash requires more memory.
+The advantage of memory-constraint hash is having ensured that the part of hash buckets residing in memory is complete. Note that duplicate rows are a big problem as they lead to skew in the size of different hash buckets and make it difficult to divide the workload into small uniform portions. For a larger bucket spilled to disk, subsequent reading back and re-aggregating may bring recursively executing the algorithm many times so that read and write the disk more frequently. The I/O overhead increases sharply.
+
+\subsection{Power-Law Distributions}
+Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distribuitions are like this. 
+
+Distributions of the Formula \ref{eq:power-law} are said to follow a power-law \cite{F1913Das}. The constant $\alpha$ is called the exponent of the power law.
+\begin{equation}\label{eq:power-law}
+    p(x) = Cx ^{-\alpha}
+\end{equation}
+with $C = e^{c}$.
+Power-law distributions occur in an extraordinarily diverse range of phenomena. In addition to city populations, the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}, the sales of books, music recordings and almost every other branded commodity \cite{Cox1995The}, \cite{Kohli2004Market}, the numbers of species in biological taxa \cite{Willis1922Some}, people's annual incomes \cite{Pareto1965Cours} and a host of other variables all follow power-law distributions. Power-law distributions are always right-skewed, it means that a bulk of the distribution occurs for fairly small sizes and only a small number of data in it are much higher than the typical value.
+
+One important application of power-law distributions is 80/20 rule(also known as Pareto principle)\cite{Box1986An}, it states that roughly 80\% of the effects come from 20\% of the causes for many events. If we are considering the distribution of wealth, we can get that about 80\% of the wealth should be in the hands of the richest 20\% of the population(the so-called ``80/20 rule''), which is borne out by more detailed observations of the wealth distribution \cite{MEJPower}. Mathematically, the 80/20 rule is roughly followed by a power-law distribution for a particular set of parameters, and many natural phenomena have been shown empirically to exhibit such a distribution. Besides the wealth distribution, the Pareto principle can be applied to optimization efforts in computer science, engineering control\cite{Gen2000Network} and many other applications. 
+
+\subsection{The Count-Min Sketch}
+
+The count-min sketch (CM sketch)\cite{Cormode2009Count},\cite{10.1007/978-3-540-24698-5_7} is a probabilistic data structure that serves as a frequency table of events in a data stream, it uses hash functions to map events to frequencies at the expense of overcounting some events due to collisions. A count-min sketch typically has a sublinear number of cells, related to the desired approximation quality of the sketch. 
+
+The count-min sketch is named after the two basic operations, counting first and computing the minimum next\cite{10.1007/978-3-540-24698-5_7}. 
+
+\emph{Data Structure}: A CM sketch is represented by a two-dimensional array counts with width $w$ and depth $d$. If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family.
+
+\emph{Update Procedure}: When an update $(i_{t},c_{t})$ arrives, meaning that item $a_{i_{t}}$is updated by a quantity of $c_{t}$ , then $c_{t}$ is added to one count in each row; the counter is determined by$h_{j}$. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(i_{t})]\leftarrow count[j,h_{j}(i_{t})] + c_{t}$. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions.
+
+\emph{Estimation Procedure}: The frequency to a query $Q(i)$ is given by $f_{i} = min_{j}count[j,h_{j}(i)]$.
+The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly.
+
+
+Our strategy is to leverage the CM sketch to counting the group sizes in the data set roughly, the rough group sizes are used to distinguish between the big groups and small groups depending on Pareto principle. Then the big groups and small groups are processed separately, the big groups are grouped by the indexing-filling method to reduce the repeat access to disk, the small groups are processed by partitioned hash grouping approach. The power-law hash can finish the key grouping operation in limited memory with high efficiency. 

@@ -1,0 +1,95 @@
+
+
+\documentclass[journal,transmag]{IEEEtran}
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+
+\else
+
+\fi
+
+
+
+
+% correct bad hyphenation here
+\usepackage{booktabs} % For formal tables
+\usepackage{indentfirst} % For formal tables\cite{}
+\usepackage{url} % For formal tables
+\usepackage{graphicx}
+\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{flushend}
+\usepackage{bm}
+\usepackage{algpseudocode}
+\usepackage{amsthm}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newtheorem{theorem}{Theorem}
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{PowerHash: A Hash Grouping Scheme by Leveraging Power-Law Properties of Data}
+%\IEEEauthorrefmark{2}
+\author{\IEEEauthorblockN{Xun Wei, \textcolor{red}{Xiaowang Kong}, Yanfeng Zhang, Ge Yu}
+Northeastern University, Liaoning, 110819, China
+\IEEEauthorblockN{1670851@stu.neu.edu.com, {zhangyf,yuge}@mail.neu.edu.cn}
+}
+
+
+
+
+
+
+
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+%We study the GroupBy implementation found in MapReduce and databases. GroupBy operation partitions a set of records into groups according to some key. Despite its  wide range of applications, most existing GroupBy implementations become very inefficient when the input data are too large to be hold in main memory, if the group sizes of input data follow the power-law distributions, their performances will be worse because of a large amount of repeat access to disk caused by distribution unbalance. We propose an I/O efficient GroupBy implementation \emph{Power-Law Hash} that leverages the features of power-law distributions. In order to reduce the I/O cost in GroupBy operation with limited memory, power-law hash copes with the big groups and small groups separately by indexing-filling and partitioned hash approach. We put forward to divide the big groups and small groups by the count-min sketch and Pareto principle. Given the same memory resource budget, power-law hash improves the execution time a lot compared with some existing GroupBy implementations.
+We study the GroupBy implementation scheme widely used in distributed systems and databases. The GroupBy operation partitions a set of out-of-order records into groups. Due to the massive data size, many I/O efficient grouping schemes that exploit external memory have been proposed. In this paper, we observe that the group sizes of input data exhibit power-law property and the grouping schemes' performance varies a lot for data with different group sizes. The \emph{indexing-filling} approach prefers data with big group size, while the \emph{partitioned hash} approach prefers data with small group size. Based on this observation, we propose a hybrid approach, \emph{PowerHash}, which invokes different grouping schemes for different data. The group size information is approximately estimated by the count-min sketch so that the big groups and small groups can be distinguished from each other. With a given memory budget, our results show that PowerHash can improve the performance by \textcolor{red}{X-X} times over the existing GroupBy implementations.
+
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+key value grouping, power-law distribution, GroupBy, hashtable.
+\end{IEEEkeywords}}
+
+
+
+% make the title area
+\maketitle
+
+\IEEEdisplaynontitleabstractindextext
+
+\IEEEpeerreviewmaketitle
+
+
+\input{intro-conf}
+\input{relatedwork-conf}
+\input{pwhash-conf}
+%\input{disscussion}
+\input{experimental-conf}
+\input{conclusion-conf}
+
+
+\begin{bibliographystyle}{IEEEtran}
+\bibliography{bibfile}
+\end{bibliographystyle}
+
+\end{document}
+
+

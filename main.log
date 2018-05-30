@@ -1,0 +1,1049 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  30 MAY 2018 09:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 9 language(s) loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen126
+\lightrulewidth=\dimen127
+\cmidrulewidth=\dimen128
+\belowrulesep=\dimen129
+\belowbottomsep=\dimen130
+\aboverulesep=\dimen131
+\abovetopsep=\dimen132
+\cmidrulesep=\dimen133
+\cmidrulekern=\dimen134
+\defaultaddspace=\dimen135
+\@cmidla=\count94
+\@cmidlb=\count95
+\@aboverulesep=\dimen136
+\@belowrulesep=\dimen137
+\@thisruleclass=\count96
+\@lastruleclass=\count97
+\@thisrulewidth=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen141
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@ContinuedFloat=\count98
+) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count99
+\sf@farskip=\skip44
+\sf@captopadj=\dimen149
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count100
+\c@subfigure@save=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@subtable@save=\count104
+\c@lotdepth=\count105
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen150
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen151
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip11
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks17
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks18
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count118
+\float@exts=\toks21
+\float@box=\box30
+\@float@everytoks=\toks22
+\@floatcapt=\box31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks23
+\c@algorithm=\count119
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/flushend.sty
+Package: flushend 2017/03/27 v3.3 Balancing columns in twocolumn mode
+\flushend@@lastskip@a=\skip52
+\flushend@@lastskip@b=\skip53
+\flushend@@lastskip@c=\skip54
+\flushend@@penalty@a=\count120
+\flushend@@lastkern@a=\dimen159
+\var@@temp@spread=\dimen160
+\var@@temp@a=\dimen161
+\flushend@@page@rule=\dimen162
+\flushend@@varbox@a=\box32
+\flushend@@varbox@c=\box33
+\flushend@@tempbox@a=\box34
+\flushend@@tempbox@c=\box35
+\@viper=\box36
+\hold@viper=\box37
+\atColsBreak=\toks24
+\atColsEnd=\toks25
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count121
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count122
+\c@ALG@rem=\count123
+\c@ALG@nested=\count124
+\ALG@tlm=\skip55
+\ALG@thistlm=\skip56
+\c@ALG@Lnr=\count125
+\c@ALG@blocknr=\count126
+\c@ALG@storecount=\count127
+\c@ALG@tmpcounter=\count128
+\ALG@tmplength=\skip57
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
+\dth@everypar=\toks31
+)
+\c@theorem=\count129
+ (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+
+-- Lines per column: 58 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count130
+\scratchdimen=\dimen163
+\scratchbox=\box38
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen164
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./intro-conf.tex
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Package epstopdf Info: Source file: <fig/paretoBig.eps>
+(epstopdf)                    date: 2018-05-29 23:37:04
+(epstopdf)                    size: 363333 bytes
+(epstopdf)             Output file: <fig/paretoBig-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:49:29
+(epstopdf)                    size: 32245 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/paretoBig-eps-converte
+d-to.pdf fig/paretoBig.eps>
+(epstopdf)             \includegraphics on input line 19.
+runsystem(repstopdf --outfile=fig/paretoBig-eps-converted-to.pdf fig/paretoBig.
+eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <fig/paretoBig-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-30 09:29:38
+(epstopdf)                    size: 32245 bytes.
+<fig/paretoBig-eps-converted-to.pdf, id=10, pagebox=cropbox, 508.90125pt x 326.
+21875pt>
+File: fig/paretoBig-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/paretoBig-eps-converted-to.pdf>
+Package pdftex.def Info: fig/paretoBig-eps-converted-to.pdf  used on input line
+ 19. on input line 19.
+Package pdftex.def Info: Requested size: 121.41307pt x 77.82619pt on input line
+ 19.
+Package epstopdf Info: Source file: <fig/paretoSmall.eps>
+(epstopdf)                    date: 2018-05-30 01:10:58
+(epstopdf)                    size: 359841 bytes
+(epstopdf)             Output file: <fig/paretoSmall-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:49:30
+(epstopdf)                    size: 31488 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/paretoSmall-eps-conver
+ted-to.pdf fig/paretoSmall.eps>
+(epstopdf)             \includegraphics on input line 21.
+runsystem(repstopdf --outfile=fig/paretoSmall-eps-converted-to.pdf fig/paretoSm
+all.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <fig/paretoSmall-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-30 09:29:39
+(epstopdf)                    size: 31488 bytes.
+<fig/paretoSmall-eps-converted-to.pdf, id=11, pagebox=cropbox, 508.90125pt x 32
+5.215pt>
+File: fig/paretoSmall-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/paretoSmall-eps-converted-to.pdf>
+Package pdftex.def Info: fig/paretoSmall-eps-converted-to.pdf  used on input li
+ne 21. on input line 21.
+Package pdftex.def Info: Requested size: 121.41307pt x 77.58673pt on input line
+ 21.
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
+
+ []
+
+Excluding 'comment' comment.) (./relatedwork-conf.tex
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no ¯ in font ptmr7t!
+ [2 <./fig/paretoBig-eps-converted-to.pdf> <./fig/paretoSmall-eps-converted-to.
+pdf>]) (./pwhash-conf.tex
+[3]
+Package epstopdf Info: Source file: <fig/pwhash.eps>
+(epstopdf)                    date: 2018-05-27 00:53:38
+(epstopdf)                    size: 346582 bytes
+(epstopdf)             Output file: <fig/pwhash-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-27 10:30:36
+(epstopdf)                    size: 26549 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/pwhash-eps-converted-t
+o.pdf fig/pwhash.eps>
+(epstopdf)             \includegraphics on input line 11.
+Package epstopdf Info: Output file is already uptodate.
+<fig/pwhash-eps-converted-to.pdf, id=57, pagebox=cropbox, 486.81876pt x 365.365
+pt>
+File: fig/pwhash-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/pwhash-eps-converted-to.pdf>
+Package pdftex.def Info: fig/pwhash-eps-converted-to.pdf  used on input line 11
+. on input line 11.
+Package pdftex.def Info: Requested size: 258.0pt x 193.63138pt on input line 11
+.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 11--12
+[][] 
+ []
+
+[4 <./fig/pwhash-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/convert.eps>
+(epstopdf)                    date: 2018-05-27 02:51:40
+(epstopdf)                    size: 439218 bytes
+(epstopdf)             Output file: <fig/convert-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-27 10:30:36
+(epstopdf)                    size: 72546 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/convert-eps-converted-
+to.pdf fig/convert.eps>
+(epstopdf)             \includegraphics on input line 46.
+Package epstopdf Info: Output file is already uptodate.
+<fig/convert-eps-converted-to.pdf, id=77, pagebox=cropbox, 442.65375pt x 203.76
+125pt>
+File: fig/convert-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/convert-eps-converted-to.pdf>
+Package pdftex.def Info: fig/convert-eps-converted-to.pdf  used on input line 4
+6. on input line 46.
+Package pdftex.def Info: Requested size: 258.0pt x 118.76923pt on input line 46
+.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 46--47
+[][] 
+ []
+
+[5 <./fig/convert-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 79.
+
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 79.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 79.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 79.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 81.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 81.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 81.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 81.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 84.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 84.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 91.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 91.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 92.
+
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 92.
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 92.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 98.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 98.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 108.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 108.
+
+) (./experimental-conf.tex
+Underfull \vbox (badness 3646) has occurred while \output is active []
+
+ [6]
+Package epstopdf Info: Source file: <fig/twitterMemTime.eps>
+(epstopdf)                    date: 2018-05-29 18:47:02
+(epstopdf)                    size: 353790 bytes
+(epstopdf)             Output file: <fig/twitterMemTime-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:33:56
+(epstopdf)                    size: 29831 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/twitterMemTime-eps-con
+verted-to.pdf fig/twitterMemTime.eps>
+(epstopdf)             \includegraphics on input line 23.
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterMemTime-eps-converted-to.pdf, id=110, pagebox=cropbox, 497.86pt x 3
+25.215pt>
+File: fig/twitterMemTime-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/twitterMemTime-eps-converted-to.pdf>
+Package pdftex.def Info: fig/twitterMemTime-eps-converted-to.pdf  used on input
+ line 23. on input line 23.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+ 23.
+Package epstopdf Info: Source file: <fig/webMemTime.eps>
+(epstopdf)                    date: 2018-05-29 18:49:04
+(epstopdf)                    size: 346552 bytes
+(epstopdf)             Output file: <fig/webMemTime-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:33:56
+(epstopdf)                    size: 28432 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/webMemTime-eps-convert
+ed-to.pdf fig/webMemTime.eps>
+(epstopdf)             \includegraphics on input line 25.
+Package epstopdf Info: Output file is already uptodate.
+<fig/webMemTime-eps-converted-to.pdf, id=111, pagebox=cropbox, 497.86pt x 326.2
+1875pt>
+File: fig/webMemTime-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/webMemTime-eps-converted-to.pdf>
+Package pdftex.def Info: fig/webMemTime-eps-converted-to.pdf  used on input lin
+e 25. on input line 25.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.2383pt on input line 
+25.
+Package epstopdf Info: Source file: <fig/googleMemTime.eps>
+(epstopdf)                    date: 2018-05-29 18:51:26
+(epstopdf)                    size: 357074 bytes
+(epstopdf)             Output file: <fig/googleMemTime-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:33:57
+(epstopdf)                    size: 30562 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/googleMemTime-eps-conv
+erted-to.pdf fig/googleMemTime.eps>
+(epstopdf)             \includegraphics on input line 27.
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleMemTime-eps-converted-to.pdf, id=112, pagebox=cropbox, 497.86pt x 32
+6.21875pt>
+File: fig/googleMemTime-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/googleMemTime-eps-converted-to.pdf>
+Package pdftex.def Info: fig/googleMemTime-eps-converted-to.pdf  used on input 
+line 27. on input line 27.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.2383pt on input line 
+27.
+Package epstopdf Info: Source file: <fig/paretoMemTime.eps>
+(epstopdf)                    date: 2018-05-29 18:53:38
+(epstopdf)                    size: 356743 bytes
+(epstopdf)             Output file: <fig/paretoMemTime-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:33:57
+(epstopdf)                    size: 30362 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/paretoMemTime-eps-conv
+erted-to.pdf fig/paretoMemTime.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoMemTime-eps-converted-to.pdf, id=113, pagebox=cropbox, 497.86pt x 32
+6.21875pt>
+File: fig/paretoMemTime-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/paretoMemTime-eps-converted-to.pdf>
+Package pdftex.def Info: fig/paretoMemTime-eps-converted-to.pdf  used on input 
+line 29. on input line 29.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.2383pt on input line 
+29.
+Package epstopdf Info: Source file: <fig/twitterComparison.eps>
+(epstopdf)                    date: 2018-05-29 18:45:38
+(epstopdf)                    size: 347179 bytes
+(epstopdf)             Output file: <fig/twitterComparison-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-05-29 21:33:58
+(epstopdf)                    size: 28470 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/twitterComparison-eps-
+converted-to.pdf fig/twitterComparison.eps>
+(epstopdf)             \includegraphics on input line 36.
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterComparison-eps-converted-to.pdf, id=114, pagebox=cropbox, 502.87875
+pt x 325.215pt>
+File: fig/twitterComparison-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/twitterComparison-eps-converted-to.pdf>
+Package pdftex.def Info: fig/twitterComparison-eps-converted-to.pdf  used on in
+put line 36. on input line 36.
+Package pdftex.def Info: Requested size: 116.35474pt x 75.24448pt on input line
+ 36.
+
+Underfull \hbox (badness 4569) in paragraph at lines 36--36
+[]\OT1/ptm/m/n/8 (a) |Per-for-mance com-par-i-son on
+ []
+
+Package epstopdf Info: Source file: <fig/webComparison.eps>
+(epstopdf)                    date: 2018-05-29 18:48:12
+(epstopdf)                    size: 349544 bytes
+(epstopdf)             Output file: <fig/webComparison-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:33:58
+(epstopdf)                    size: 29288 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/webComparison-eps-conv
+erted-to.pdf fig/webComparison.eps>
+(epstopdf)             \includegraphics on input line 38.
+Package epstopdf Info: Output file is already uptodate.
+<fig/webComparison-eps-converted-to.pdf, id=115, pagebox=cropbox, 505.89pt x 32
+6.21875pt>
+File: fig/webComparison-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/webComparison-eps-converted-to.pdf>
+Package pdftex.def Info: fig/webComparison-eps-converted-to.pdf  used on input 
+line 38. on input line 38.
+Package pdftex.def Info: Requested size: 116.35474pt x 75.02873pt on input line
+ 38.
+
+Underfull \hbox (badness 4108) in paragraph at lines 38--38
+[]\OT1/ptm/m/n/8 (b) |Per-for-mance com-par-i-son on
+ []
+
+Package epstopdf Info: Source file: <fig/googleComparison.eps>
+(epstopdf)                    date: 2018-05-29 18:50:40
+(epstopdf)                    size: 350030 bytes
+(epstopdf)             Output file: <fig/googleComparison-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2018-05-29 21:33:59
+(epstopdf)                    size: 29233 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/googleComparison-eps-c
+onverted-to.pdf fig/googleComparison.eps>
+(epstopdf)             \includegraphics on input line 40.
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleComparison-eps-converted-to.pdf, id=116, pagebox=cropbox, 502.87875p
+t x 326.21875pt>
+File: fig/googleComparison-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/googleComparison-eps-converted-to.pdf>
+Package pdftex.def Info: fig/googleComparison-eps-converted-to.pdf  used on inp
+ut line 40. on input line 40.
+Package pdftex.def Info: Requested size: 116.35474pt x 75.47672pt on input line
+ 40.
+
+Underfull \hbox (badness 4569) in paragraph at lines 40--40
+[]\OT1/ptm/m/n/8 (c) |Per-for-mance com-par-i-son on
+ []
+
+Package epstopdf Info: Source file: <fig/paretoComparison.eps>
+(epstopdf)                    date: 2018-05-29 18:52:42
+(epstopdf)                    size: 352557 bytes
+(epstopdf)             Output file: <fig/paretoComparison-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2018-05-29 21:33:59
+(epstopdf)                    size: 29854 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/paretoComparison-eps-c
+onverted-to.pdf fig/paretoComparison.eps>
+(epstopdf)             \includegraphics on input line 42.
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoComparison-eps-converted-to.pdf, id=117, pagebox=cropbox, 499.8675pt
+ x 325.215pt>
+File: fig/paretoComparison-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/paretoComparison-eps-converted-to.pdf>
+Package pdftex.def Info: fig/paretoComparison-eps-converted-to.pdf  used on inp
+ut line 42. on input line 42.
+Package pdftex.def Info: Requested size: 116.35474pt x 75.70102pt on input line
+ 42.
+
+Underfull \hbox (badness 4108) in paragraph at lines 42--42
+[]\OT1/ptm/m/n/8 (d) |Per-for-mance com-par-i-son on
+ []
+
+[7]
+Package epstopdf Info: Source file: <fig/twitterRatio.eps>
+(epstopdf)                    date: 2018-05-29 19:01:42
+(epstopdf)                    size: 344353 bytes
+(epstopdf)             Output file: <fig/twitterRatio-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:00
+(epstopdf)                    size: 27768 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/twitterRatio-eps-conve
+rted-to.pdf fig/twitterRatio.eps>
+(epstopdf)             \includegraphics on input line 67.
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterRatio-eps-converted-to.pdf, id=122, pagebox=cropbox, 497.86pt x 325
+.215pt>
+File: fig/twitterRatio-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/twitterRatio-eps-converted-to.pdf>
+Package pdftex.def Info: fig/twitterRatio-eps-converted-to.pdf  used on input l
+ine 67. on input line 67.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+ 67.
+Package epstopdf Info: Source file: <fig/webRatio.eps>
+(epstopdf)                    date: 2018-05-29 19:03:46
+(epstopdf)                    size: 347717 bytes
+(epstopdf)             Output file: <fig/webRatio-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:00
+(epstopdf)                    size: 28776 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/webRatio-eps-converted
+-to.pdf fig/webRatio.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+<fig/webRatio-eps-converted-to.pdf, id=123, pagebox=cropbox, 497.86pt x 325.215
+pt>
+File: fig/webRatio-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/webRatio-eps-converted-to.pdf>
+Package pdftex.def Info: fig/webRatio-eps-converted-to.pdf  used on input line 
+69. on input line 69.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+ 69.
+Package epstopdf Info: Source file: <fig/googleRatio.eps>
+(epstopdf)                    date: 2018-05-29 19:05:10
+(epstopdf)                    size: 345088 bytes
+(epstopdf)             Output file: <fig/googleRatio-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:01
+(epstopdf)                    size: 28078 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/googleRatio-eps-conver
+ted-to.pdf fig/googleRatio.eps>
+(epstopdf)             \includegraphics on input line 71.
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleRatio-eps-converted-to.pdf, id=124, pagebox=cropbox, 497.86pt x 326.
+21875pt>
+File: fig/googleRatio-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/googleRatio-eps-converted-to.pdf>
+Package pdftex.def Info: fig/googleRatio-eps-converted-to.pdf  used on input li
+ne 71. on input line 71.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.2383pt on input line 
+71.
+Package epstopdf Info: Source file: <fig/paretoRatio.eps>
+(epstopdf)                    date: 2018-05-29 19:02:44
+(epstopdf)                    size: 344688 bytes
+(epstopdf)             Output file: <fig/paretoRatio-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:01
+(epstopdf)                    size: 27827 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/paretoRatio-eps-conver
+ted-to.pdf fig/paretoRatio.eps>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoRatio-eps-converted-to.pdf, id=125, pagebox=cropbox, 497.86pt x 325.
+215pt>
+File: fig/paretoRatio-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/paretoRatio-eps-converted-to.pdf>
+Package pdftex.def Info: fig/paretoRatio-eps-converted-to.pdf  used on input li
+ne 73. on input line 73.
+Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+ 73.
+Package epstopdf Info: Source file: <fig/CMTime.eps>
+(epstopdf)                    date: 2018-05-29 19:14:00
+(epstopdf)                    size: 339836 bytes
+(epstopdf)             Output file: <fig/CMTime-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:02
+(epstopdf)                    size: 28931 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CMTime-eps-converted-t
+o.pdf fig/CMTime.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CMTime-eps-converted-to.pdf, id=126, pagebox=cropbox, 744.7825pt x 486.818
+76pt>
+File: fig/CMTime-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CMTime-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CMTime-eps-converted-to.pdf  used on input line 84
+. on input line 84.
+Package pdftex.def Info: Requested size: 121.41307pt x 79.35596pt on input line
+ 84.
+Package epstopdf Info: Source file: <fig/CMMem.eps>
+(epstopdf)                    date: 2018-05-29 19:13:14
+(epstopdf)                    size: 338822 bytes
+(epstopdf)             Output file: <fig/CMMem-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:03
+(epstopdf)                    size: 28690 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CMMem-eps-converted-to
+.pdf fig/CMMem.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CMMem-eps-converted-to.pdf, id=127, pagebox=cropbox, 744.7825pt x 485.815p
+t>
+File: fig/CMMem-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CMMem-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CMMem-eps-converted-to.pdf  used on input line 86.
+ on input line 86.
+Package pdftex.def Info: Requested size: 121.41307pt x 79.19232pt on input line
+ 86.
+
+Underfull \hbox (badness 2245) in paragraph at lines 86--86
+[]\OT1/ptm/m/n/8 (b) |Mem-ory us-age with dif-fer-ent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./fig/twitterMemTime-eps-converted-to.pdf> <./fig/webMemTime-eps-converted
+-to.pdf> <./fig/googleMemTime-eps-converted-to.pdf> <./fig/paretoMemTime-eps-co
+nverted-to.pdf> <./fig/twitterComparison-eps-converted-to.pdf> <./fig/webCompar
+ison-eps-converted-to.pdf> <./fig/googleComparison-eps-converted-to.pdf> <./fig
+/paretoComparison-eps-converted-to.pdf>]
+
+Package caption Warning: \label without proper reference on input line 97.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig: PhaseEvaluation' on page 9 undefined on input li
+ne 94.
+
+Package epstopdf Info: Source file: <fig/TimePercentage.eps>
+(epstopdf)                    date: 2018-05-29 19:19:46
+(epstopdf)                    size: 315870 bytes
+(epstopdf)             Output file: <fig/TimePercentage-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:03
+(epstopdf)                    size: 21883 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/TimePercentage-eps-con
+verted-to.pdf fig/TimePercentage.eps>
+(epstopdf)             \includegraphics on input line 98.
+Package epstopdf Info: Output file is already uptodate.
+<fig/TimePercentage-eps-converted-to.pdf, id=260, pagebox=cropbox, 745.78625pt 
+x 485.815pt>
+File: fig/TimePercentage-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/TimePercentage-eps-converted-to.pdf>
+Package pdftex.def Info: fig/TimePercentage-eps-converted-to.pdf  used on input
+ line 98. on input line 98.
+Package pdftex.def Info: Requested size: 121.41307pt x 79.08855pt on input line
+ 98.
+Package epstopdf Info: Source file: <fig/MemPhase.eps>
+(epstopdf)                    date: 2018-05-29 19:17:36
+(epstopdf)                    size: 327314 bytes
+(epstopdf)             Output file: <fig/MemPhase-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-29 21:34:04
+(epstopdf)                    size: 25122 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/MemPhase-eps-converted
+-to.pdf fig/MemPhase.eps>
+(epstopdf)             \includegraphics on input line 100.
+Package epstopdf Info: Output file is already uptodate.
+<fig/MemPhase-eps-converted-to.pdf, id=261, pagebox=cropbox, 497.86pt x 325.215
+pt>
+File: fig/MemPhase-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/MemPhase-eps-converted-to.pdf>
+Package pdftex.def Info: fig/MemPhase-eps-converted-to.pdf  used on input line 
+100. on input line 100.
+Package pdftex.def Info: Requested size: 121.41307pt x 79.30867pt on input line
+ 100.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
+ []
+
+) (./conclusion-conf.tex) (./main.bbl [9 <./fig/twitterRatio-eps-converted-to.p
+df> <./fig/webRatio-eps-converted-to.pdf> <./fig/googleRatio-eps-converted-to.p
+df> <./fig/paretoRatio-eps-converted-to.pdf> <./fig/CMTime-eps-converted-to.pdf
+> <./fig/CMMem-eps-converted-to.pdf> <./fig/TimePercentage-eps-converted-to.pdf
+> <./fig/MemPhase-eps-converted-to.pdf>]
+Underfull \hbox (badness 3460) in paragraph at lines 107--110
+[]\OT1/ptm/m/n/8 C. Freed-man, ``Hash ag-gre-gate,'' $https : / / blogs . msdn 
+. microsoft . com /
+ []
+
+Missing character: There is no ö in font ptmr7t!
+)
+- LAST -
+Extra skip:9.0pt
+Left:309.0pt/1.73193pt
+Right:300.0pt/1.73193pt
+Output:309.0pt
+ [10] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6057 strings out of 494813
+ 95395 string characters out of 6178109
+ 175008 words of memory out of 5000000
+ 9200 multiletter control sequences out of 15000+600000
+ 47347 words of font info for 102 fonts, out of 8000000 for 9000
+ 84 hyphenation exceptions out of 8191
+ 41i,11n,49p,1747b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 724814 bytes).
+PDF statistics:
+ 434 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+
