@@ -37,9 +37,9 @@ The count-min sketch (CM sketch)\cite{Cormode2009Count},\cite{10.1007/978-3-540-
 
 The count-min sketch is named after the two basic operations, counting first and computing the minimum next\cite{10.1007/978-3-540-24698-5_7}. 
 
-\emph{Data Structure}: A CM sketch is represented by a two-dimensional array counts with width $w$ and depth $d$. If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family.
+\emph{Data Structure}: A CM sketch is represented by a two-dimensional array counts with width $w$ and depth $d$. If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions.
 
-\emph{Update Procedure}: When an update $(i_{t},c_{t})$ arrives, meaning that item $a_{i_{t}}$is updated by a quantity of $c_{t}$ , then $c_{t}$ is added to one count in each row; the counter is determined by$h_{j}$. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(i_{t})]\leftarrow count[j,h_{j}(i_{t})] + c_{t}$. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions.
+\emph{Update Procedure}: When an update $(i_{t},c_{t})$ arrives, meaning that item $a_{i_{t}}$ is updated by a quantity of $c_{t}$ , then $c_{t}$ is added to one count in each row; the counter is determined by $h_{j}$. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(i_{t})]\leftarrow count[j,h_{j}(i_{t})] + c_{t}$. 
 
 \emph{Estimation Procedure}: The frequency to a query $Q(i)$ is given by $f_{i} = min_{j}count[j,h_{j}(i)]$.
 The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly.
