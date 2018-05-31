@@ -58,25 +58,25 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Power-Law Distributions}{3}}
 \newlabel{eq:power-law}{{1}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}The Count-Min Sketch}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview Intuition of Power-Law Hash.\relax }}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview Intuition of PowerHash.\relax }}{4}}
 \newlabel{fig:pwHash}{{2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Power-Law Hash Design and Implementation}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}PowerHash Design and Implementation}{4}}
 \newlabel{sec:hash}{{III}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Overview of power-law hash}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Overview of Powerhash}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Phase 1: Distinguishing}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Phase 2: Indexing and Filling}{5}}
 \newlabel{eq:accurate_size}{{2}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The offset index generation.\relax }}{5}}
 \newlabel{fig:convert}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Phase 3: Partitioned Hash}{5}}
-\newlabel{eq:partition_num}{{3}{5}}
-\newlabel{eq:partition_hash}{{4}{5}}
+\newlabel{eq:partition_num}{{3}{6}}
+\newlabel{eq:partition_hash}{{4}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Algorithm analyse}{6}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces PowerHash\relax }}{6}}
+\newlabel{alg:group}{{1}{6}}
 \citation{dean2008mapreduce}
 \citation{bartholomew2012mariadb}
 \citation{HashAggregate15}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Power-Law Hash\relax }}{6}}
-\newlabel{alg:group}{{1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Algorithm analyse}{6}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Experimental Evaluation}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Data sets\relax }}{7}}
 \newlabel{tab:dataset}{{I}{7}}
@@ -110,12 +110,6 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Performance comparison on Google}}}{8}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Performance comparison on Pareto}}}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Parameters Evaluation}{8}}
-\bibstyle{IEEEtran}
-\bibdata{bibfile}
-\bibcite{gray1997data}{1}
-\bibcite{stephens2005oracle}{2}
-\bibcite{mysql2009mysql}{3}
-\bibcite{momjian2001postgresql}{4}
 \newlabel{fig:twitterRatio}{{6a}{9}}
 \newlabel{sub@fig:twitterRatio}{{(a)}{a}}
 \newlabel{fig:webRatio}{{6b}{9}}
@@ -130,7 +124,7 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Ratio test on web-BerkStan}}}{9}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Ratio test on Google}}}{9}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Ratio test on Pareto}}}{9}}
-\newlabel{fig: CMPara}{{\caption@xref {fig: CMPara}{ on input line 83}}{9}}
+\newlabel{fig: CMPara}{{\caption@xref {fig: CMPara}{ on input line 85}}{9}}
 \newlabel{fig:CMTime}{{7a}{9}}
 \newlabel{sub@fig:CMTime}{{(a)}{a}}
 \newlabel{fig:CMMem}{{7b}{9}}
@@ -139,7 +133,7 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Runtime with different width}}}{9}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage with different width}}}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Phase Evaluation}{9}}
-\newlabel{fig: PhaseEvaluation}{{\caption@xref {fig: PhaseEvaluation}{ on input line 97}}{9}}
+\newlabel{fig: PhaseEvaluation}{{\caption@xref {fig: PhaseEvaluation}{ on input line 99}}{9}}
 \newlabel{fig:TimePercentage}{{8a}{9}}
 \newlabel{sub@fig:TimePercentage}{{(a)}{a}}
 \newlabel{fig:MemPhase}{{8b}{9}}
@@ -148,7 +142,12 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Time percentage of each phase}}}{9}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage of each phase}}}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{9}}
-\@writefile{toc}{\contentsline {section}{References}{9}}
+\bibstyle{IEEEtran}
+\bibdata{bibfile}
+\bibcite{gray1997data}{1}
+\bibcite{stephens2005oracle}{2}
+\bibcite{mysql2009mysql}{3}
+\bibcite{momjian2001postgresql}{4}
 \bibcite{dean2008mapreduce}{5}
 \bibcite{shvachko2010hadoop}{6}
 \bibcite{yu2009distributed}{7}
@@ -173,3 +172,4 @@
 \bibcite{Box1986An}{26}
 \bibcite{Gen2000Network}{27}
 \bibcite{10.1007/978-3-540-24698-5_7}{28}
+\@writefile{toc}{\contentsline {section}{References}{10}}
