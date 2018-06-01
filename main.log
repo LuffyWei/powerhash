@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  31 MAY 2018 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  1 JUN 2018 21:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,41 +483,41 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Package epstopdf Info: Source file: <fig/paretoBig.eps>
-(epstopdf)                    date: 2018-05-30 17:49:48
-(epstopdf)                    size: 362508 bytes
+(epstopdf)                    date: 2018-06-01 21:25:44
+(epstopdf)                    size: 363304 bytes
 (epstopdf)             Output file: <fig/paretoBig-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:41:27
-(epstopdf)                    size: 32067 bytes
+(epstopdf)                    date: 2018-06-01 21:50:49
+(epstopdf)                    size: 31845 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/paretoBig-eps-converte
 d-to.pdf fig/paretoBig.eps>
 (epstopdf)             \includegraphics on input line 19.
 Package epstopdf Info: Output file is already uptodate.
-<fig/paretoBig-eps-converted-to.pdf, id=10, pagebox=cropbox, 497.86pt x 326.218
-75pt>
+<fig/paretoBig-eps-converted-to.pdf, id=10, pagebox=cropbox, 510.90875pt x 415.
+5525pt>
 File: fig/paretoBig-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/paretoBig-eps-converted-to.pdf>
 Package pdftex.def Info: fig/paretoBig-eps-converted-to.pdf  used on input line
  19. on input line 19.
-Package pdftex.def Info: Requested size: 121.41307pt x 79.55345pt on input line
+Package pdftex.def Info: Requested size: 121.41225pt x 99.58246pt on input line
  19.
 Package epstopdf Info: Source file: <fig/paretoSmall.eps>
-(epstopdf)                    date: 2018-05-30 17:50:38
-(epstopdf)                    size: 359790 bytes
+(epstopdf)                    date: 2018-06-01 21:22:07
+(epstopdf)                    size: 360018 bytes
 (epstopdf)             Output file: <fig/paretoSmall-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:41:28
-(epstopdf)                    size: 31476 bytes
+(epstopdf)                    date: 2018-06-01 21:50:50
+(epstopdf)                    size: 31429 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/paretoSmall-eps-conver
 ted-to.pdf fig/paretoSmall.eps>
 (epstopdf)             \includegraphics on input line 21.
 Package epstopdf Info: Output file is already uptodate.
-<fig/paretoSmall-eps-converted-to.pdf, id=11, pagebox=cropbox, 508.90125pt x 32
-5.215pt>
+<fig/paretoSmall-eps-converted-to.pdf, id=11, pagebox=cropbox, 514.92375pt x 41
+5.5525pt>
 File: fig/paretoSmall-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/paretoSmall-eps-converted-to.pdf>
 Package pdftex.def Info: fig/paretoSmall-eps-converted-to.pdf  used on input li
 ne 21. on input line 21.
-Package pdftex.def Info: Requested size: 121.41307pt x 77.58673pt on input line
- 21.
+Package pdftex.def Info: Requested size: 121.4078pt x 99.58246pt on input line 
+21.
 
 Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
@@ -530,29 +530,24 @@ Missing character: There is no ¯ in font ptmr7t!
 pdf>]) (./pwhash-conf.tex
 [3]
 Package epstopdf Info: Source file: <fig/pwhash.eps>
-(epstopdf)                    date: 2018-05-30 18:04:04
-(epstopdf)                    size: 346549 bytes
+(epstopdf)                    date: 2018-06-01 17:29:02
+(epstopdf)                    size: 361770 bytes
 (epstopdf)             Output file: <fig/pwhash-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:41:28
-(epstopdf)                    size: 26456 bytes
+(epstopdf)                    date: 2018-06-01 21:50:50
+(epstopdf)                    size: 30366 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/pwhash-eps-converted-t
 o.pdf fig/pwhash.eps>
-(epstopdf)             \includegraphics on input line 10.
+(epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
-<fig/pwhash-eps-converted-to.pdf, id=57, pagebox=cropbox, 486.81876pt x 365.365
-pt>
+<fig/pwhash-eps-converted-to.pdf, id=57, pagebox=cropbox, 487.8225pt x 368.3762
+5pt>
 File: fig/pwhash-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/pwhash-eps-converted-to.pdf>
-Package pdftex.def Info: fig/pwhash-eps-converted-to.pdf  used on input line 10
-. on input line 10.
-Package pdftex.def Info: Requested size: 258.0pt x 193.63138pt on input line 10
-.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 10--11
-[][] 
- []
-
-[4 <./fig/pwhash-eps-converted-to.pdf>]
+Package pdftex.def Info: fig/pwhash-eps-converted-to.pdf  used on input line 11
+. on input line 11.
+Package pdftex.def Info: Requested size: 247.6778pt x 187.03186pt on input line
+ 11.
+ [4 <./fig/pwhash-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/convert.eps>
 (epstopdf)                    date: 2018-05-27 02:51:40
 (epstopdf)                    size: 439218 bytes
@@ -561,266 +556,219 @@ Package epstopdf Info: Source file: <fig/convert.eps>
 (epstopdf)                    size: 72546 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/convert-eps-converted-
 to.pdf fig/convert.eps>
-(epstopdf)             \includegraphics on input line 47.
+(epstopdf)             \includegraphics on input line 50.
 Package epstopdf Info: Output file is already uptodate.
 <fig/convert-eps-converted-to.pdf, id=77, pagebox=cropbox, 442.65375pt x 203.76
 125pt>
 File: fig/convert-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/convert-eps-converted-to.pdf>
-Package pdftex.def Info: fig/convert-eps-converted-to.pdf  used on input line 4
-7. on input line 47.
-Package pdftex.def Info: Requested size: 258.0pt x 118.76923pt on input line 47
-.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 47--48
-[][] 
- []
-
-[5 <./fig/convert-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 78.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+Package pdftex.def Info: fig/convert-eps-converted-to.pdf  used on input line 5
+0. on input line 50.
+Package pdftex.def Info: Requested size: 247.6778pt x 114.01224pt on input line
+ 50.
+ [5 <./fig/convert-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 80.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 78.
+LaTeX Warning: Command \textless invalid in math mode on input line 80.
 
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 78.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 80.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/it' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 78.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 78.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 80.
 
 
 LaTeX Warning: Command \textless invalid in math mode on input line 80.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 80.
+LaTeX Warning: Command \textless invalid in math mode on input line 82.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 80.
+LaTeX Warning: Command \textless invalid in math mode on input line 82.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 80.
+LaTeX Warning: Command \textless invalid in math mode on input line 82.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 83.
+LaTeX Warning: Command \textless invalid in math mode on input line 82.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 83.
+LaTeX Warning: Command \textless invalid in math mode on input line 85.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 90.
+LaTeX Warning: Command \textless invalid in math mode on input line 85.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 90.
+LaTeX Warning: Command \textless invalid in math mode on input line 92.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 91.
+LaTeX Warning: Command \textless invalid in math mode on input line 92.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 93.
 
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 93.
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 91.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 97.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 93.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 97.
+LaTeX Warning: Command \textless invalid in math mode on input line 99.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 107.
+LaTeX Warning: Command \textless invalid in math mode on input line 99.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 107.
+LaTeX Warning: Command \textless invalid in math mode on input line 109.
 
 
-Underfull \vbox (badness 2662) has occurred while \output is active []
+LaTeX Warning: Command \textless invalid in math mode on input line 109.
 
- [6])
-(./experimental-conf.tex
+) (./experimental-conf.tex [6]
 Package epstopdf Info: Source file: <fig/twitterMemTime.eps>
-(epstopdf)                    date: 2018-06-01 04:38:52
-(epstopdf)                    size: 361690 bytes
+(epstopdf)                    date: 2018-06-01 13:24:18
+(epstopdf)                    size: 358958 bytes
 (epstopdf)             Output file: <fig/twitterMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:03
-(epstopdf)                    size: 30955 bytes
+(epstopdf)                    date: 2018-06-01 13:27:53
+(epstopdf)                    size: 30427 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/twitterMemTime-eps-con
 verted-to.pdf fig/twitterMemTime.eps>
 (epstopdf)             \includegraphics on input line 23.
-runsystem(repstopdf --outfile=fig/twitterMemTime-eps-converted-to.pdf fig/twitt
-erMemTime.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/twitterMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:15
-(epstopdf)                    size: 30955 bytes.
-<fig/twitterMemTime-eps-converted-to.pdf, id=110, pagebox=cropbox, 499.8675pt x
- 326.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterMemTime-eps-converted-to.pdf, id=110, pagebox=cropbox, 513.92pt x 4
+10.53375pt>
 File: fig/twitterMemTime-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/twitterMemTime-eps-converted-to.pdf>
 Package pdftex.def Info: fig/twitterMemTime-eps-converted-to.pdf  used on input
  line 23. on input line 23.
-Package pdftex.def Info: Requested size: 116.35474pt x 75.93466pt on input line
- 23.
+Package pdftex.def Info: Requested size: 116.34845pt x 99.5825pt on input line 
+23.
 Package epstopdf Info: Source file: <fig/webMemTime.eps>
-(epstopdf)                    date: 2018-06-01 04:42:20
-(epstopdf)                    size: 353911 bytes
+(epstopdf)                    date: 2018-06-01 13:10:14
+(epstopdf)                    size: 350782 bytes
 (epstopdf)             Output file: <fig/webMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:04
-(epstopdf)                    size: 29619 bytes
+(epstopdf)                    date: 2018-06-01 13:27:54
+(epstopdf)                    size: 29128 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/webMemTime-eps-convert
 ed-to.pdf fig/webMemTime.eps>
 (epstopdf)             \includegraphics on input line 25.
-runsystem(repstopdf --outfile=fig/webMemTime-eps-converted-to.pdf fig/webMemTim
-e.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/webMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:15
-(epstopdf)                    size: 29619 bytes.
-<fig/webMemTime-eps-converted-to.pdf, id=111, pagebox=cropbox, 498.86375pt x 32
-6.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/webMemTime-eps-converted-to.pdf, id=111, pagebox=cropbox, 512.91624pt x 41
+5.5525pt>
 File: fig/webMemTime-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/webMemTime-eps-converted-to.pdf>
 Package pdftex.def Info: fig/webMemTime-eps-converted-to.pdf  used on input lin
 e 25. on input line 25.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.084pt on input line 2
-5.
+Package pdftex.def Info: Requested size: 116.34818pt x 99.58246pt on input line
+ 25.
 Package epstopdf Info: Source file: <fig/googleMemTime.eps>
-(epstopdf)                    date: 2018-06-01 04:45:40
-(epstopdf)                    size: 359010 bytes
+(epstopdf)                    date: 2018-06-01 13:27:16
+(epstopdf)                    size: 355534 bytes
 (epstopdf)             Output file: <fig/googleMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:04
-(epstopdf)                    size: 30782 bytes
+(epstopdf)                    date: 2018-06-01 13:27:54
+(epstopdf)                    size: 30077 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/googleMemTime-eps-conv
 erted-to.pdf fig/googleMemTime.eps>
 (epstopdf)             \includegraphics on input line 27.
-runsystem(repstopdf --outfile=fig/googleMemTime-eps-converted-to.pdf fig/google
-MemTime.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/googleMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:16
-(epstopdf)                    size: 30782 bytes.
-<fig/googleMemTime-eps-converted-to.pdf, id=112, pagebox=cropbox, 497.86pt x 32
-6.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleMemTime-eps-converted-to.pdf, id=112, pagebox=cropbox, 511.9125pt x 
+415.5525pt>
 File: fig/googleMemTime-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/googleMemTime-eps-converted-to.pdf>
 Package pdftex.def Info: fig/googleMemTime-eps-converted-to.pdf  used on input 
 line 27. on input line 27.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.2383pt on input line 
-27.
+Package pdftex.def Info: Requested size: 116.35483pt x 99.58246pt on input line
+ 27.
 Package epstopdf Info: Source file: <fig/paretoMemTime.eps>
-(epstopdf)                    date: 2018-06-01 04:48:22
-(epstopdf)                    size: 359374 bytes
+(epstopdf)                    date: 2018-06-01 13:15:44
+(epstopdf)                    size: 355996 bytes
 (epstopdf)             Output file: <fig/paretoMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:05
-(epstopdf)                    size: 30916 bytes
+(epstopdf)                    date: 2018-06-01 13:27:55
+(epstopdf)                    size: 30358 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/paretoMemTime-eps-conv
 erted-to.pdf fig/paretoMemTime.eps>
 (epstopdf)             \includegraphics on input line 29.
-runsystem(repstopdf --outfile=fig/paretoMemTime-eps-converted-to.pdf fig/pareto
-MemTime.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/paretoMemTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:16
-(epstopdf)                    size: 30916 bytes.
-<fig/paretoMemTime-eps-converted-to.pdf, id=113, pagebox=cropbox, 497.86pt x 32
-5.215pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoMemTime-eps-converted-to.pdf, id=113, pagebox=cropbox, 508.90125pt x
+ 415.5525pt>
 File: fig/paretoMemTime-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/paretoMemTime-eps-converted-to.pdf>
 Package pdftex.def Info: fig/paretoMemTime-eps-converted-to.pdf  used on input 
 line 29. on input line 29.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+Package pdftex.def Info: Requested size: 116.35371pt x 99.58246pt on input line
  29.
 Package epstopdf Info: Source file: <fig/twitterComparison.eps>
-(epstopdf)                    date: 2018-06-01 04:37:50
-(epstopdf)                    size: 353893 bytes
+(epstopdf)                    date: 2018-06-01 13:03:28
+(epstopdf)                    size: 353299 bytes
 (epstopdf)             Output file: <fig/twitterComparison-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-05-31 21:45:05
-(epstopdf)                    size: 30125 bytes
+(epstopdf)                    date: 2018-06-01 13:03:46
+(epstopdf)                    size: 30334 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/twitterComparison-eps-
 converted-to.pdf fig/twitterComparison.eps>
 (epstopdf)             \includegraphics on input line 36.
-runsystem(repstopdf --outfile=fig/twitterComparison-eps-converted-to.pdf fig/tw
-itterComparison.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/twitterComparison-eps-converted-to.pdf
->
-(epstopdf)                    date: 2018-05-31 21:47:17
-(epstopdf)                    size: 30125 bytes.
-<fig/twitterComparison-eps-converted-to.pdf, id=114, pagebox=cropbox, 503.8825p
-t x 326.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterComparison-eps-converted-to.pdf, id=114, pagebox=cropbox, 509.905pt
+ x 411.5375pt>
 File: fig/twitterComparison-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/twitterComparison-eps-converted-to.pdf>
 Package pdftex.def Info: fig/twitterComparison-eps-converted-to.pdf  used on in
 put line 36. on input line 36.
-Package pdftex.def Info: Requested size: 116.35474pt x 75.3274pt on input line 
+Package pdftex.def Info: Requested size: 116.3498pt x 99.58107pt on input line 
 36.
 
-Underfull \hbox (badness 4569) in paragraph at lines 36--36
+Underfull \hbox (badness 4556) in paragraph at lines 36--36
 []\OT1/ptm/m/n/8 (a) |Per-for-mance com-par-i-son on
  []
 
 Package epstopdf Info: Source file: <fig/webComparison.eps>
-(epstopdf)                    date: 2018-06-01 04:40:48
-(epstopdf)                    size: 357375 bytes
+(epstopdf)                    date: 2018-06-01 13:00:52
+(epstopdf)                    size: 354782 bytes
 (epstopdf)             Output file: <fig/webComparison-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:06
-(epstopdf)                    size: 31155 bytes
+(epstopdf)                    date: 2018-06-01 13:01:08
+(epstopdf)                    size: 30370 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/webComparison-eps-conv
 erted-to.pdf fig/webComparison.eps>
 (epstopdf)             \includegraphics on input line 38.
-runsystem(repstopdf --outfile=fig/webComparison-eps-converted-to.pdf fig/webCom
-parison.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/webComparison-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:17
-(epstopdf)                    size: 31155 bytes.
-<fig/webComparison-eps-converted-to.pdf, id=115, pagebox=cropbox, 507.8975pt x 
-326.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/webComparison-eps-converted-to.pdf, id=115, pagebox=cropbox, 509.905pt x 4
+15.5525pt>
 File: fig/webComparison-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/webComparison-eps-converted-to.pdf>
 Package pdftex.def Info: fig/webComparison-eps-converted-to.pdf  used on input 
 line 38. on input line 38.
-Package pdftex.def Info: Requested size: 116.35474pt x 74.73006pt on input line
- 38.
+Package pdftex.def Info: Requested size: 116.3498pt x 99.58246pt on input line 
+38.
 
-Underfull \hbox (badness 4108) in paragraph at lines 38--38
+Underfull \hbox (badness 4096) in paragraph at lines 38--38
 []\OT1/ptm/m/n/8 (b) |Per-for-mance com-par-i-son on
  []
 
 Package epstopdf Info: Source file: <fig/googleComparison.eps>
-(epstopdf)                    date: 2018-06-01 04:44:36
-(epstopdf)                    size: 350309 bytes
+(epstopdf)                    date: 2018-06-01 13:26:41
+(epstopdf)                    size: 349000 bytes
 (epstopdf)             Output file: <fig/googleComparison-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2018-05-31 21:45:07
-(epstopdf)                    size: 29327 bytes
+(epstopdf)                    date: 2018-06-01 13:27:55
+(epstopdf)                    size: 28734 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/googleComparison-eps-c
 onverted-to.pdf fig/googleComparison.eps>
 (epstopdf)             \includegraphics on input line 40.
-runsystem(repstopdf --outfile=fig/googleComparison-eps-converted-to.pdf fig/goo
-gleComparison.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/googleComparison-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2018-05-31 21:47:18
-(epstopdf)                    size: 29327 bytes.
-<fig/googleComparison-eps-converted-to.pdf, id=116, pagebox=cropbox, 499.8675pt
- x 325.215pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleComparison-eps-converted-to.pdf, id=116, pagebox=cropbox, 508.90125p
+t x 420.57124pt>
 File: fig/googleComparison-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/googleComparison-eps-converted-to.pdf>
 Package pdftex.def Info: fig/googleComparison-eps-converted-to.pdf  used on inp
 ut line 40. on input line 40.
-Package pdftex.def Info: Requested size: 116.35474pt x 75.70102pt on input line
+Package pdftex.def Info: Requested size: 116.35371pt x 99.58508pt on input line
  40.
 
 Underfull \hbox (badness 4569) in paragraph at lines 40--40
@@ -828,29 +776,23 @@ Underfull \hbox (badness 4569) in paragraph at lines 40--40
  []
 
 Package epstopdf Info: Source file: <fig/paretoComparison.eps>
-(epstopdf)                    date: 2018-06-01 04:47:12
-(epstopdf)                    size: 349023 bytes
+(epstopdf)                    date: 2018-06-01 13:14:55
+(epstopdf)                    size: 347199 bytes
 (epstopdf)             Output file: <fig/paretoComparison-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2018-05-31 21:45:07
-(epstopdf)                    size: 29225 bytes
+(epstopdf)                    date: 2018-06-01 13:27:56
+(epstopdf)                    size: 28414 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/paretoComparison-eps-c
 onverted-to.pdf fig/paretoComparison.eps>
 (epstopdf)             \includegraphics on input line 42.
-runsystem(repstopdf --outfile=fig/paretoComparison-eps-converted-to.pdf fig/par
-etoComparison.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/paretoComparison-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2018-05-31 21:47:18
-(epstopdf)                    size: 29225 bytes.
-<fig/paretoComparison-eps-converted-to.pdf, id=117, pagebox=cropbox, 500.87125p
-t x 324.21124pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoComparison-eps-converted-to.pdf, id=117, pagebox=cropbox, 511.9125pt
+ x 415.5525pt>
 File: fig/paretoComparison-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/paretoComparison-eps-converted-to.pdf>
 Package pdftex.def Info: fig/paretoComparison-eps-converted-to.pdf  used on inp
 ut line 42. on input line 42.
-Package pdftex.def Info: Requested size: 116.35474pt x 75.31401pt on input line
+Package pdftex.def Info: Requested size: 116.35483pt x 99.58246pt on input line
  42.
 
 Underfull \hbox (badness 4108) in paragraph at lines 42--42
@@ -858,150 +800,113 @@ Underfull \hbox (badness 4108) in paragraph at lines 42--42
  []
 
 [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 Package epstopdf Info: Source file: <fig/twitterRatio.eps>
-(epstopdf)                    date: 2018-06-01 04:27:42
-(epstopdf)                    size: 344348 bytes
+(epstopdf)                    date: 2018-06-01 13:43:27
+(epstopdf)                    size: 340968 bytes
 (epstopdf)             Output file: <fig/twitterRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:08
-(epstopdf)                    size: 27751 bytes
+(epstopdf)                    date: 2018-06-01 21:50:51
+(epstopdf)                    size: 27027 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/twitterRatio-eps-conve
 rted-to.pdf fig/twitterRatio.eps>
 (epstopdf)             \includegraphics on input line 69.
-runsystem(repstopdf --outfile=fig/twitterRatio-eps-converted-to.pdf fig/twitter
-Ratio.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/twitterRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:19
-(epstopdf)                    size: 27751 bytes.
-<fig/twitterRatio-eps-converted-to.pdf, id=122, pagebox=cropbox, 498.86375pt x 
-325.215pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/twitterRatio-eps-converted-to.pdf, id=122, pagebox=cropbox, 517.935pt x 41
+5.5525pt>
 File: fig/twitterRatio-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/twitterRatio-eps-converted-to.pdf>
 Package pdftex.def Info: fig/twitterRatio-eps-converted-to.pdf  used on input l
 ine 69. on input line 69.
-Package pdftex.def Info: Requested size: 116.35474pt x 75.8499pt on input line 
-69.
+Package pdftex.def Info: Requested size: 116.34857pt x 99.58246pt on input line
+ 69.
 Package epstopdf Info: Source file: <fig/webRatio.eps>
-(epstopdf)                    date: 2018-06-01 04:29:56
-(epstopdf)                    size: 347574 bytes
+(epstopdf)                    date: 2018-06-01 13:45:13
+(epstopdf)                    size: 344719 bytes
 (epstopdf)             Output file: <fig/webRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:08
-(epstopdf)                    size: 28822 bytes
+(epstopdf)                    date: 2018-06-01 21:50:51
+(epstopdf)                    size: 27899 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/webRatio-eps-converted
 -to.pdf fig/webRatio.eps>
 (epstopdf)             \includegraphics on input line 71.
-runsystem(repstopdf --outfile=fig/webRatio-eps-converted-to.pdf fig/webRatio.ep
-s)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/webRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:20
-(epstopdf)                    size: 28822 bytes.
-<fig/webRatio-eps-converted-to.pdf, id=123, pagebox=cropbox, 497.86pt x 325.215
-pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/webRatio-eps-converted-to.pdf, id=123, pagebox=cropbox, 513.92pt x 415.552
+5pt>
 File: fig/webRatio-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/webRatio-eps-converted-to.pdf>
 Package pdftex.def Info: fig/webRatio-eps-converted-to.pdf  used on input line 
 71. on input line 71.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+Package pdftex.def Info: Requested size: 116.34845pt x 99.58246pt on input line
  71.
 Package epstopdf Info: Source file: <fig/googleRatio.eps>
-(epstopdf)                    date: 2018-06-01 04:30:44
-(epstopdf)                    size: 344907 bytes
+(epstopdf)                    date: 2018-06-01 13:55:49
+(epstopdf)                    size: 343737 bytes
 (epstopdf)             Output file: <fig/googleRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:09
-(epstopdf)                    size: 28022 bytes
+(epstopdf)                    date: 2018-06-01 21:50:52
+(epstopdf)                    size: 27741 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/googleRatio-eps-conver
 ted-to.pdf fig/googleRatio.eps>
 (epstopdf)             \includegraphics on input line 73.
-runsystem(repstopdf --outfile=fig/googleRatio-eps-converted-to.pdf fig/googleRa
-tio.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/googleRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:20
-(epstopdf)                    size: 28022 bytes.
-<fig/googleRatio-eps-converted-to.pdf, id=124, pagebox=cropbox, 498.86375pt x 3
-26.21875pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/googleRatio-eps-converted-to.pdf, id=124, pagebox=cropbox, 515.9275pt x 41
+6.55624pt>
 File: fig/googleRatio-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/googleRatio-eps-converted-to.pdf>
 Package pdftex.def Info: fig/googleRatio-eps-converted-to.pdf  used on input li
 ne 73. on input line 73.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.084pt on input line 7
-3.
+Package pdftex.def Info: Requested size: 116.3542pt x 99.58145pt on input line 
+73.
 Package epstopdf Info: Source file: <fig/paretoRatio.eps>
-(epstopdf)                    date: 2018-06-01 04:29:08
-(epstopdf)                    size: 344547 bytes
+(epstopdf)                    date: 2018-06-01 13:44:25
+(epstopdf)                    size: 342799 bytes
 (epstopdf)             Output file: <fig/paretoRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:09
-(epstopdf)                    size: 27832 bytes
+(epstopdf)                    date: 2018-06-01 21:50:53
+(epstopdf)                    size: 27426 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/paretoRatio-eps-conver
 ted-to.pdf fig/paretoRatio.eps>
 (epstopdf)             \includegraphics on input line 75.
-runsystem(repstopdf --outfile=fig/paretoRatio-eps-converted-to.pdf fig/paretoRa
-tio.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/paretoRatio-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:21
-(epstopdf)                    size: 27832 bytes.
-<fig/paretoRatio-eps-converted-to.pdf, id=125, pagebox=cropbox, 497.86pt x 325.
-215pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/paretoRatio-eps-converted-to.pdf, id=125, pagebox=cropbox, 513.92pt x 415.
+5525pt>
 File: fig/paretoRatio-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/paretoRatio-eps-converted-to.pdf>
 Package pdftex.def Info: fig/paretoRatio-eps-converted-to.pdf  used on input li
 ne 75. on input line 75.
-Package pdftex.def Info: Requested size: 116.35474pt x 76.00372pt on input line
+Package pdftex.def Info: Requested size: 116.34845pt x 99.58246pt on input line
  75.
- [8 <./fig/twitterMemTime-eps-converted-to.pdf> <./fig/webMemTime-eps-converted
--to.pdf> <./fig/googleMemTime-eps-converted-to.pdf> <./fig/paretoMemTime-eps-co
-nverted-to.pdf> <./fig/twitterComparison-eps-converted-to.pdf> <./fig/webCompar
-ison-eps-converted-to.pdf> <./fig/googleComparison-eps-converted-to.pdf> <./fig
-/paretoComparison-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/CMTime.eps>
-(epstopdf)                    date: 2018-06-01 04:24:24
-(epstopdf)                    size: 341408 bytes
+(epstopdf)                    date: 2018-06-01 21:39:12
+(epstopdf)                    size: 341788 bytes
 (epstopdf)             Output file: <fig/CMTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:10
-(epstopdf)                    size: 29229 bytes
+(epstopdf)                    date: 2018-06-01 21:50:53
+(epstopdf)                    size: 29319 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/CMTime-eps-converted-t
 o.pdf fig/CMTime.eps>
 (epstopdf)             \includegraphics on input line 86.
-runsystem(repstopdf --outfile=fig/CMTime-eps-converted-to.pdf fig/CMTime.eps)..
-.executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/CMTime-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:21
-(epstopdf)                    size: 29229 bytes.
-<fig/CMTime-eps-converted-to.pdf, id=258, pagebox=cropbox, 747.79375pt x 485.81
-5pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/CMTime-eps-converted-to.pdf, id=126, pagebox=cropbox, 604.2575pt x 489.83p
+t>
 File: fig/CMTime-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/CMTime-eps-converted-to.pdf>
 Package pdftex.def Info: fig/CMTime-eps-converted-to.pdf  used on input line 86
 . on input line 86.
-Package pdftex.def Info: Requested size: 121.41307pt x 78.87357pt on input line
+Package pdftex.def Info: Requested size: 121.41179pt x 99.57869pt on input line
  86.
 Package epstopdf Info: Source file: <fig/CMMem.eps>
-(epstopdf)                    date: 2018-06-01 04:23:38
-(epstopdf)                    size: 340812 bytes
+(epstopdf)                    date: 2018-06-01 21:40:11
+(epstopdf)                    size: 341140 bytes
 (epstopdf)             Output file: <fig/CMMem-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:10
-(epstopdf)                    size: 29143 bytes
+(epstopdf)                    date: 2018-06-01 21:50:54
+(epstopdf)                    size: 29167 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/CMMem-eps-converted-to
 .pdf fig/CMMem.eps>
 (epstopdf)             \includegraphics on input line 88.
-runsystem(repstopdf --outfile=fig/CMMem-eps-converted-to.pdf fig/CMMem.eps)...e
-xecuted safely (allowed).
-
-Package epstopdf Info: Result file: <fig/CMMem-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:22
-(epstopdf)                    size: 29143 bytes.
-<fig/CMMem-eps-converted-to.pdf, id=259, pagebox=cropbox, 747.79375pt x 485.815
-pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/CMMem-eps-converted-to.pdf, id=127, pagebox=cropbox, 612.2875pt x 489.83pt
+>
 File: fig/CMMem-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/CMMem-eps-converted-to.pdf>
 Package pdftex.def Info: fig/CMMem-eps-converted-to.pdf  used on input line 88.
  on input line 88.
-Package pdftex.def Info: Requested size: 121.41307pt x 78.87357pt on input line
+Package pdftex.def Info: Requested size: 121.40894pt x 99.57869pt on input line
  88.
 
 Underfull \hbox (badness 2245) in paragraph at lines 88--88
@@ -1013,51 +918,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./fig/twitterMemTime-eps-converted-to.pdf> <./fig/webMemTime-eps-converted
+-to.pdf> <./fig/googleMemTime-eps-converted-to.pdf> <./fig/paretoMemTime-eps-co
+nverted-to.pdf> <./fig/twitterComparison-eps-converted-to.pdf> <./fig/webCompar
+ison-eps-converted-to.pdf> <./fig/googleComparison-eps-converted-to.pdf> <./fig
+/paretoComparison-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/TimePercentage.eps>
-(epstopdf)                    date: 2018-06-01 04:19:36
-(epstopdf)                    size: 315827 bytes
+(epstopdf)                    date: 2018-06-01 21:49:26
+(epstopdf)                    size: 315780 bytes
 (epstopdf)             Output file: <fig/TimePercentage-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:11
-(epstopdf)                    size: 21903 bytes
+(epstopdf)                    date: 2018-06-01 21:50:54
+(epstopdf)                    size: 21922 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/TimePercentage-eps-con
 verted-to.pdf fig/TimePercentage.eps>
 (epstopdf)             \includegraphics on input line 100.
-runsystem(repstopdf --outfile=fig/TimePercentage-eps-converted-to.pdf fig/TimeP
-ercentage.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/TimePercentage-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:22
-(epstopdf)                    size: 21903 bytes.
-<fig/TimePercentage-eps-converted-to.pdf, id=260, pagebox=cropbox, 747.79375pt 
-x 486.81876pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/TimePercentage-eps-converted-to.pdf, id=260, pagebox=cropbox, 603.25375pt 
+x 489.83pt>
 File: fig/TimePercentage-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/TimePercentage-eps-converted-to.pdf>
 Package pdftex.def Info: fig/TimePercentage-eps-converted-to.pdf  used on input
  line 100. on input line 100.
-Package pdftex.def Info: Requested size: 121.41307pt x 79.03653pt on input line
+Package pdftex.def Info: Requested size: 121.41261pt x 99.57869pt on input line
  100.
 Package epstopdf Info: Source file: <fig/MemPhase.eps>
-(epstopdf)                    date: 2018-06-01 04:16:22
-(epstopdf)                    size: 327181 bytes
+(epstopdf)                    date: 2018-06-01 21:44:58
+(epstopdf)                    size: 329613 bytes
 (epstopdf)             Output file: <fig/MemPhase-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:45:11
-(epstopdf)                    size: 25131 bytes
+(epstopdf)                    date: 2018-06-01 21:50:55
+(epstopdf)                    size: 25392 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/MemPhase-eps-converted
 -to.pdf fig/MemPhase.eps>
 (epstopdf)             \includegraphics on input line 102.
-runsystem(repstopdf --outfile=fig/MemPhase-eps-converted-to.pdf fig/MemPhase.ep
-s)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <fig/MemPhase-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-31 21:47:23
-(epstopdf)                    size: 25131 bytes.
-<fig/MemPhase-eps-converted-to.pdf, id=261, pagebox=cropbox, 498.86375pt x 325.
-215pt>
+Package epstopdf Info: Output file is already uptodate.
+<fig/MemPhase-eps-converted-to.pdf, id=261, pagebox=cropbox, 497.86pt x 415.552
+5pt>
 File: fig/MemPhase-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/MemPhase-eps-converted-to.pdf>
 Package pdftex.def Info: fig/MemPhase-eps-converted-to.pdf  used on input line 
 102. on input line 102.
-Package pdftex.def Info: Requested size: 121.41307pt x 79.14987pt on input line
+Package pdftex.def Info: Requested size: 121.41081pt x 99.58246pt on input line
  102.
 
 Underfull \hbox (badness 10000) in paragraph at lines 100--103
@@ -1077,19 +980,19 @@ Underfull \hbox (badness 3460) in paragraph at lines 107--110
 Missing character: There is no ö in font ptmr7t!
 )
 - LAST -
-Extra skip:29.63803pt
+Extra skip:29.698pt
 Left:696.0pt/0.0pt
-Right:416.97998pt/1.73193pt
-Output:425.03093pt
+Right:399.0pt/1.73193pt
+Output:389.00095pt
  [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  6057 strings out of 494813
  95395 string characters out of 6178109
- 180008 words of memory out of 5000000
+ 179008 words of memory out of 5000000
  9200 multiletter control sequences out of 15000+600000
  47347 words of font info for 102 fonts, out of 8000000 for 9000
  84 hyphenation exceptions out of 8191
- 41i,11n,49p,1709b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,49p,1709b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/t
@@ -1101,7 +1004,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 733137 bytes).
+Output written on main.pdf (10 pages, 729426 bytes).
 PDF statistics:
  434 PDF objects out of 1000 (max. 8388607)
  264 compressed objects within 3 object streams

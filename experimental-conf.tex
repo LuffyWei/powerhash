@@ -20,26 +20,26 @@ This section presents the performance evaluation for PowerHash. We compare our w
 
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Overall performance on Twitter]{\includegraphics[width = 1.61in]{fig/twitterMemTime.eps}\label{fig:twitterMemTime}}\ \
+  \subfloat[Overall performance on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterMemTime.eps}\label{fig:twitterMemTime}}\ \
     \hspace{0.5pt}
-  \subfloat[Overall performance on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webMemTime.eps}\label{fig:webMemTime}}\ \
+  \subfloat[Overall performance on web-BerkStan]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/webMemTime.eps}\label{fig:webMemTime}}\ \
    \hspace{0.5pt}
-  \subfloat[Overall performance on Google]{\includegraphics[width = 1.61in]{fig/googleMemTime.eps}\label{fig:googleMemTime}}\ \
+  \subfloat[Overall performance on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleMemTime.eps}\label{fig:googleMemTime}}\ \
      \hspace{0.5pt}
-  \subfloat[Overall performance on Pareto]{\includegraphics[width = 1.61in]{fig/paretoMemTime.eps}\label{fig:paretoMemTime}}\ \ 
+  \subfloat[Overall performance on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoMemTime.eps}\label{fig:paretoMemTime}}\ \ 
     \caption{Overall performance on various data sets.}
   \label{fig:overallPerformance} 
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Performance comparison on Twitter]{\includegraphics[width = 1.61in]{fig/twitterComparison.eps}\label{fig:twitterComparison}}\ \
+  \subfloat[Performance comparison on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterComparison.eps}\label{fig:twitterComparison}}\ \
     \hspace{0.5pt}
-  \subfloat[Performance comparison on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webComparison.eps}\label{fig:webComparison}}\ \
+  \subfloat[Performance comparison on web-BerkStan]{\includegraphics[width = 1.61in, height =3.5cm]{fig/webComparison.eps}\label{fig:webComparison}}\ \
    \hspace{0.5pt}
-  \subfloat[Performance comparison on Google]{\includegraphics[width = 1.61in]{fig/googleComparison.eps}\label{fig:googleComparison}}\ \
+  \subfloat[Performance comparison on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleComparison.eps}\label{fig:googleComparison}}\ \
      \hspace{0.5pt}
-  \subfloat[Performance comparison on Pareto]{\includegraphics[width = 1.61in]{fig/paretoComparison.eps}\label{fig:paretoComparison}}\ \ 
+  \subfloat[Performance comparison on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoComparison.eps}\label{fig:paretoComparison}}\ \ 
     \caption{Performance comparison on various data sets.}
   \label{fig:performanceComparison} 
 \end{figure*}
@@ -66,13 +66,13 @@ We make the following analysis to this phenomenon: recall to section \ref{sec:re
 \subsection{Parameters Evaluation}
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Ratio test on Twitter]{\includegraphics[width = 1.61in]{fig/twitterRatio.eps}\label{fig:twitterRatio}}\ \
+  \subfloat[Ratio test on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterRatio.eps}\label{fig:twitterRatio}}\ \
     \hspace{0.5pt}
-  \subfloat[Ratio test on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webRatio.eps}\label{fig:webRatio}}\ \
+  \subfloat[Ratio test on web-BerkStan]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/webRatio.eps}\label{fig:webRatio}}\ \
    \hspace{0.5pt}
-  \subfloat[Ratio test on Google]{\includegraphics[width = 1.61in]{fig/googleRatio.eps}\label{fig:googleRatio}}\ \
+  \subfloat[Ratio test on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleRatio.eps}\label{fig:googleRatio}}\ \
      \hspace{0.5pt}
-  \subfloat[Ratio test on Pareto]{\includegraphics[width = 1.61in]{fig/paretoRatio.eps}\label{fig:paretoRatio}}\ \ 
+  \subfloat[Ratio test on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoRatio.eps}\label{fig:paretoRatio}}\ \ 
     \caption{Ratio test on various data sets.}
   \label{fig:ratio} 
 \end{figure*}
@@ -83,9 +83,9 @@ In the work, we also evaluate the impact on different parameters of PowerHash. W
 \textbf{The parameters of CM sketch}. The next experiment shows the effect of the CM sketch parameters. Recall from Distinguishing phase in section \ref{sec:hash} that the CM sketch are employed to reflect the distributions of group sizes, we sort a row of the CM sketch and then obtain the threshold between big group sizes and small group sizes according to the big groups ratio, then divide the big groups and small groups based on their rough sizes, so the width and depth of CM sketch can influence the judgement of big groups and small groups. According to the CM sketch introduction in section \ref{sec:related}: if the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth is $\lceil ln(1/\delta)\rceil $, the width is $\lceil e/\varepsilon\rceil $, the depth can be set easily. The width of CM sketch determines the accuracy of threshold, it directly affects the division between big groups and small groups in Distinguishing phase. Figure 7 shows the memory usage and time cost on different data sets with the width varying.
 \begin{figure}[htbp]
 	\label{fig: CMPara}
-    \subfloat[Runtime with different width]{\includegraphics[width = 1.68in]{fig/CMTime.eps}\label{fig:CMTime}}
+    \subfloat[Runtime with different width]{\includegraphics[width = 1.68in, height = 3.5cm]{fig/CMTime.eps}\label{fig:CMTime}}
        \hspace{0.23cm}
-    \subfloat[Memory usage with different width]{\includegraphics[width =1.68in]{fig/CMMem.eps}\label{fig:CMMem}}\\    
+    \subfloat[Memory usage with different width]{\includegraphics[width =1.68in, height = 3.5cm]{fig/CMMem.eps}\label{fig:CMMem}}\\    
 	\caption{Runtime and memroy usage with different width of the CM sketch.}	
 	
 \end{figure}
@@ -97,9 +97,9 @@ In this subsection, we discuss the impact and interrelated factor on Distinguish
 %Distinguishing phase studies the global knowledge of group size information, Indexing and Filling phase generates an offset index that contains the output information of big groups and then groups the big groups by file random access on the basis of offset index. Partitioned hash phase deals with the small groups in memory and then append them to result file.
 \begin{figure}[htbp]	
 	\label{fig: PhaseEvaluation}
-    \subfloat[Time percentage of each phase]{\includegraphics[width = 1.68in]{fig/TimePercentage.eps}\label{fig:TimePercentage}}
+    \subfloat[Time percentage of each phase]{\includegraphics[width = 1.68in, height = 3.5cm]{fig/TimePercentage.eps}\label{fig:TimePercentage}}
     \hspace{0.23cm}
-    \subfloat[Memory usage of each phase]{\includegraphics[width =1.68in]{fig/MemPhase.eps}\label{fig:MemPhase}}\\    
+    \subfloat[Memory usage of each phase]{\includegraphics[width =1.68in, height = 3.5cm]{fig/MemPhase.eps}\label{fig:MemPhase}}\\    
 	\caption{Runtime and memroy usage comparison between each phase.}
 		
 \end{figure}
