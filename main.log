@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  1 JUN 2018 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.12)  2 JUN 2018 10:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -980,15 +980,15 @@ Underfull \hbox (badness 3460) in paragraph at lines 107--110
 Missing character: There is no ö in font ptmr7t!
 )
 - LAST -
-Extra skip:29.698pt
+Extra skip:5.61801pt
 Left:696.0pt/0.0pt
 Right:399.0pt/1.73193pt
-Output:389.00095pt
+Output:383.73894pt
  [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  6057 strings out of 494813
  95395 string characters out of 6178109
- 179008 words of memory out of 5000000
+ 171008 words of memory out of 5000000
  9200 multiletter control sequences out of 15000+600000
  47347 words of font info for 102 fonts, out of 8000000 for 9000
  84 hyphenation exceptions out of 8191
@@ -1004,7 +1004,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (10 pages, 729426 bytes).
+Output written on main.pdf (10 pages, 729415 bytes).
 PDF statistics:
  434 PDF objects out of 1000 (max. 8388607)
  264 compressed objects within 3 object streams

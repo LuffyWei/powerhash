@@ -1,7 +1,7 @@
 \section{Related Work}
 \label{sec:related}
 
- A increasingly large body of work has focused on the problem of key grouping (or Group By). There are two categories of GroupBy implementations ingeneral, sort-based grouping and hash-based grouping. Each of these algorithms can be used for anywhere in database query related to grouping (Group By, SUM, AVE, etc) \cite{Hellerstein1996Query}. This section provides some backgrounds on existing key grouping approaches and the power-law distributions used in our algorithm. Section A introduces the merge-sort grouping algorithm and Section B provides a detailed description on memory-constraint hash algorithm for SQL Hash GroupBy clause,  Section C and D introduces the power-law distributions  and the count-min sketch. 
+ A increasingly large body of work has focused on the problem of key grouping (or Group By). There are two categories of GroupBy implementations in general, sort-based grouping and hash-based grouping. Each of these algorithms can be used for anywhere in database query related to grouping (Group By, SUM, AVE, etc) \cite{Hellerstein1996Query}. This section provides some backgrounds on existing key grouping approaches and the power-law distributions used in our algorithm. Section A introduces the merge-sort grouping algorithm and Section B provides a detailed description on memory-constraint hash algorithm for SQL Hash GroupBy clause,  Section C and D introduces the power-law distributions  and the count-min sketch. 
 
 \subsection{Merge-Sort Grouping Algorithm}%2.1
 One of the most widely used key grouping algorithm is merge-sort grouping algorithm widely used in MapReduce \cite{dean2008mapreduce} and SQL Group By operator \cite{nasir2015power},\cite{mysql2009mysql},\cite{boicea2012mongodb},\cite{momjian2001postgresql},\cite{agrawal2005database}.
@@ -20,7 +20,7 @@ Compared to merge-sort, memory-constraint hash requires more memory.
 The advantage of memory-constraint hash is having ensured that the part of hash buckets residing in memory is complete. Note that duplicate rows are a big problem as they lead to skew in the size of different hash buckets and make it difficult to divide the workload into small uniform portions. For a larger bucket spilled to disk, subsequent reading back and re-aggregating may bring recursively executing the algorithm many times so that read and write the disk more frequently. The I/O overhead increases sharply.
 
 \subsection{Power-Law Distributions}
-Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distribuitions are like this. 
+Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distributions are like this. 
 
 Distributions of the Formula \ref{eq:power-law} are said to follow a power-law \cite{F1913Das}. The constant $\alpha$ is called the exponent of the power law.
 \begin{equation}\label{eq:power-law}
