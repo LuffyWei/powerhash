@@ -17,34 +17,53 @@ This section provides some backgrounds on existing key grouping approaches and r
 
 
 \Paragraph{Memory-Constraint Hash Grouping}%2.2
-Some SQL databases (e.g., MariaDB) that use a hash grouping aggregation strategy for GroupBy operations \cite{bartholomew2012mariadb}. We refer to this approach as \emph{memory-constraint hash grouping}.  The memory-constraint hash is similar to hash join, it does not require sort but more memory. \textcolor{red}{Memory-constraint hash partitions the large task  into smaller subtasks  where the subtasks can be executed in memory completely \cite{Bratbergsengen1984Hashing},\cite{HashAggregate15}. If the size of data to be grouped exceeds the memory limit, one or more partitions or buckets including any partial aggregated results along with any additional new rows that will be hashed to the spilled buckets or partitions will be spilled to disk. These new rows that are hashed to the spilled partitions will be divided up into the partitions that they belong to although won't be aggregated temporarily. Once all input groups have been processed, the completed in-memory groups will be output and repeat the algorithm by reading back and aggregating one spilled partition at a time. Compared to merge-sort, memory-constraint hash requires more memory. The advantage of memory-constraint hash is having ensured that the part of hash buckets residing in memory is complete. Note that duplicate rows are a big problem as they lead to skew in the size of different hash buckets and make it difficult to divide the workload into small uniform portions. For a larger bucket spilled to disk, subsequent reading back and re-aggregating may bring recursively executing the algorithm many times so that read and write the disk more frequently. The I/O overhead increases sharply.}
+Some SQL databases (e.g., MariaDB) that use a hash grouping aggregation strategy for GroupBy operations \cite{bartholomew2012mariadb}. We refer to this approach as \emph{memory-constraint hash grouping}.  The memory-constraint hash is similar to hash join, it does not require sort but more memory. \textcolor{red}{Memory-constraint hash partitions the large task  into smaller subtasks  where the subtasks can be executed in memory completely \cite{Bratbergsengen1984Hashing},\cite{HashAggregate15}. If the size of data to be grouped exceeds the memory limit, one or more buckets will be spilled to disk. Then the records that are hashed to the spilled buckets will be divided up into the corresponding partitions in disk. Once all input groups have been processed, the completed in-memory groups will be output and repeat the algorithm by reading back and aggregating one spilled partition at a time. However, when processing data sets whose group sizes follow power-law distributions, the sub-tables sizes are not balanced, which leads to multiple recursive partitions and downgrade grouping performance.}
+
+%including any partial aggregated results along with any additional new rows that will be hashed to the spilled buckets or partitions
+
+ 
+\subsection{Pareto Principle}
+%Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distributions are like this. 
+
+Power-law distributions occur in an extraordinarily diverse range of phenomena, e.g., the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}. Those things following the power-law distributions are always right-skewed, it means that a bulk of the distribution occurs for fairly small sizes and only a small number of data in it are much higher than the typical value.
+
+Based on the right-skew property of power-law distributions in reality, Pareto principle(also known as 80/20 rule)\cite{Box1986An}, \cite{MEJPower} is proposed, it is is borne out by more detailed observations of the wealth distribution. It states that about 80\% of the wealth should be in the hands of the richest 20\% of the population(the so-called ``80/20 rule''). According to the Pareto principle, we can get that roughly 80\% of the effects come from 20\% of the causes for many events. Mathematically, the 80/20 rule is roughly followed by a power-law distribution for a particular set of parameters. Besides the wealth distribution, the Pareto principle can be applied to optimization efforts in computer science, engineering control\cite{Gen2000Network} and many other applications. 
+
+For a data set whose group sizes follow a power-law distribution, we can distinguish between the big groups and small groups roughly on the basis the Pareto principle, the ratio between big groups and small groups obeys the 80/20 rule. 
+%We extract the groups that are the top 20\% in size from four data sets, these big groups occupy about 80\% of the data sets as shown in Table \ref{tab:percentage}.
 
 \begin{comment}
-\subsection{Power-Law Distribution}
-Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distributions are like this. 
-
-Distributions of the Formula \ref{eq:power-law} are said to follow a power-law \cite{F1913Das}. The constant $\alpha$ is called the exponent of the power law.
-\begin{equation}\label{eq:power-law}
-    p(x) = Cx ^{-\alpha}
-\end{equation}
-with $C = e^{c}$.
-Power-law distributions occur in an extraordinarily diverse range of phenomena. In addition to city populations, the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}, the sales of books, music recordings and almost every other branded commodity \cite{Cox1995The}, \cite{Kohli2004Market}, the numbers of species in biological taxa \cite{Willis1922Some}, people's annual incomes \cite{Pareto1965Cours} and a host of other variables all follow power-law distributions. Power-law distributions are always right-skewed, it means that a bulk of the distribution occurs for fairly small sizes and only a small number of data in it are much higher than the typical value.
-
-One important application of power-law distributions is 80/20 rule(also known as Pareto principle)\cite{Box1986An}, it states that roughly 80\% of the effects come from 20\% of the causes for many events. If we are considering the distribution of wealth, we can get that about 80\% of the wealth should be in the hands of the richest 20\% of the population(the so-called ``80/20 rule''), which is borne out by more detailed observations of the wealth distribution \cite{MEJPower}. Mathematically, the 80/20 rule is roughly followed by a power-law distribution for a particular set of parameters, and many natural phenomena have been shown empirically to exhibit such a distribution. Besides the wealth distribution, the Pareto principle can be applied to optimization efforts in computer science, engineering control\cite{Gen2000Network} and many other applications. 
+\begin{table}
+  \caption{Percentage of the size of the big groups}
+  \label{tab:percentage}
+  \begin{tabular}{cccc}
+    \toprule
+    dataset & total size & big group size & percentage\\
+    \midrule    
+    Twitter & 180.4MB & 142MB & 78\%\\	
+	web-BerkStan & 102.5MB & 80.0MB &78\%\\
+	Google & 97.2MB & 61M & 63\%
+	Pareto  & 575.4MB & 519MB & 90\%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
 \end{comment}
+
 
 \subsection{The Count-Min Sketch}
 
-The count-min sketch (CM sketch)\cite{Cormode2009Count},\cite{10.1007/978-3-540-24698-5_7} is a probabilistic data structure that serves as a frequency table of events in a data stream, it uses hash functions to map events to frequencies at the expense of overcounting some events due to collisions. A count-min sketch typically has a sublinear number of cells, related to the desired approximation quality of the sketch. 
+The count-min sketch (CM sketch)\cite{Cormode2009Count},\cite{10.1007/978-3-540-24698-5_7} is a probabilistic data structure that serves as a frequency table of events in a data stream, it uses hash functions to map events to frequencies at the expense of overcounting some events due to collisions. 
+%A count-min sketch typically has a sublinear number of cells, related to the desired approximation quality of the sketch. \
+%If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero.
 
-The count-min sketch is named after the two basic operations, counting first and computing the minimum next\cite{10.1007/978-3-540-24698-5_7}. 
+A CM sketch is represented by a two-dimensional array counting with width $w$ and depth $d$. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions. The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly.
 
-\emph{Data Structure}: A CM sketch is represented by a two-dimensional array counting with width $w$ and depth $d$. If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions.
+In our algorithm, the CM sketch will be used to counting the group sizes in the data sets, the distinction between big groups and small groups is based on these rough group sizes. When calculating the group sizes, the CM sketch has the two basic operations: counting first and computing the minimum next.
 
-\emph{Update Procedure}: When an update $(i_{t},c_{t})$ arrives, meaning that item $a_{i_{t}}$ is updated by a quantity of $c_{t}$ , then $c_{t}$ is added to one count in each row; the counter is determined by $h_{j}$. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(i_{t})]\leftarrow count[j,h_{j}(i_{t})] + c_{t}$. 
+We first traverse the input data set to be grouped, when getting a $\langle key, value\rangle$ pair, meaning that this kv-pair belongs to a group with unique $key$, the group size will be updated by the kv-pair size $sizeof(kv)$, then $sizeof(kv)$ are added to one count in each row; the counter is determined by $h_{j}$. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(key)]\leftarrow count[j,h_{j}(key)] + sizeof(kv)$. After traversing, the size to a group with $key$ is given by $f_{key} = min_{j}count[j,h_{j}(key)]$.
 
-\emph{Estimation Procedure}: The frequency to a query $Q(i)$ is given by $f_{i} = min_{j}count[j,h_{j}(i)]$.
-The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly.
+On the other hand, each row of the CM sketch can reflect the distribution of group sizes, this property can help us distinguish the big groups and small groups with avoiding large-scale sorting.
+
 
 
 Our strategy is to leverage the CM sketch to counting the group sizes in the data set roughly, the rough group sizes are used to distinguish between the big groups and small groups depending on Pareto principle. Then the big groups and small groups are processed separately, the big groups are grouped by the indexing and filling method to reduce the I/O cost, the small groups are processed by partitioned hash grouping approach. PowerHash can finish the key grouping operation in limited memory with high efficiency. 
