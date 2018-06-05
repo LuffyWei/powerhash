@@ -25,7 +25,16 @@ Some SQL databases (e.g., MariaDB) that use a hash grouping aggregation strategy
 \subsection{Pareto Principle}
 %Many of the things that scientists measure have a typical size or ``scale'' --- a typical value around which individual measurements are centred. But not all things we measure are peaked around a typical value, some vary over an enormous dynamic range \cite{MEJPower}, those things following the power-law distributions are like this. 
 
-Power-law distributions occur in an extraordinarily diverse range of phenomena, e.g., the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}. Those things following the power-law distributions are always right-skewed, it means that a bulk of the distribution occurs for fairly small sizes and only a small number of data in it are much higher than the typical value.
+Power-law distributions occur in an extraordinarily diverse range of phenomena, e.g., the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}. Those things following the power-law distributions are always right-skewed, it means that a bulk of the distribution occurs for fairly small sizes and only a small number of data in it are much higher than the typical value. When we carry out key grouping operation, the group sizes in many real data sets follow the power-law distributions as shown in Figure \ref{fig: distributions}.
+
+\begin{figure}[t]%figure 2
+\subfloat[Distribution of Twitter]{\includegraphics[width = 1.68in, height = 3.5cm]{fig/twitter.eps}\label{fig:twitter}}
+    \hspace{0.23cm}
+    \subfloat[Distribution of web-BerkStan]{\includegraphics[width =1.68in, height = 3.5cm]{fig/web.eps}\label{fig:web}}\\
+%\includegraphics[width=.5\textwidth]{fig/pareto_index_hash}
+\caption{The distributions of group sizes in two real data sets.}
+\label{fig: distributions}
+\end{figure}
 
 Based on the right-skew property of power-law distributions in reality, Pareto principle(also known as 80/20 rule)\cite{Box1986An}, \cite{MEJPower} is proposed, it is is borne out by more detailed observations of the wealth distribution. It states that about 80\% of the wealth should be in the hands of the richest 20\% of the population(the so-called ``80/20 rule''). According to the Pareto principle, we can get that roughly 80\% of the effects come from 20\% of the causes for many events. Mathematically, the 80/20 rule is roughly followed by a power-law distribution for a particular set of parameters. Besides the wealth distribution, the Pareto principle can be applied to optimization efforts in computer science, engineering control\cite{Gen2000Network} and many other applications. 
 
