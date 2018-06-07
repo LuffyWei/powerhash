@@ -1,46 +1,43 @@
 \section{PowerHash Design and Implementation}
 \label{sec:hash}
 
-When processing large dataset, the memory constraint group-by implementations need to spill part of data to disk. These spilled partitions will be read back and will be merged as the final result. For hash based grouping approaches, it is possible that the read and write for a data partition can be executed recursively when the memory is limited. This will degrade the performance seriously. As discussed in Sec. \ref{sec:intro}, indexing-filling could be a better implementation for big groups. We take the group size information into account and propose our PowerHash grouping scheme.
+In key grouping operation, many grouping approaches need to spill part of kv-pairs to disk when the memory usage has reached the threshold, these spilled partitions will be read back to re-aggregate subsequently. If the group sizes of data set follow a power-law distribution, 
+it is more difficult for these approaches to divide the work data into small uniform portions, several great partitions may be create if some big groups are spilled to the same portion. For a large partition spilled to disk, subsequent reading back and re-aggregating may lead to recursively execute the process many times when the memory is limited, the I/O overhead increases sharply. So we take the group size into account and propose to deal with the big groups and small groups separately. For the data sets whose group sizes follow power-law distributions, the total size of big groups occupies the majority of the data sets but the number of big groups is minority, in which case
+the indexing and filling method is suitable for big group key grouping; After the big groups has been processed, the rest small groups can be partitioned balanced, so the partitioned hash grouping is a good choice for small groups. Based on the idea of processing separately, PowerHash algorithm is proposed. 
 
-% subsequently. If the group sizes of data set follow a power-law distribution,
-%it is more difficult for these approaches to divide the work data into small uniform portions, several great partitions may be create if some big groups are spilled to the same portion. For a large partition spilled to disk, subsequent reading back and re-aggregating may lead to recursively execute the process many times when the memory is limited, the I/O overhead increases sharply. So we take the group size into account and propose to deal with the big groups and small groups separately. For the data sets whose group sizes follow power-law distributions, the total size of big groups occupies the majority of the data sets but the number of big groups is minority, in which case
-%the indexing and filling method is suitable for big group key grouping; After the big groups has been processed, the rest small groups can be partitioned balanced, so the partitioned hash grouping is a good choice for small groups. Based on the idea of processing separately, PowerHash algorithm is proposed.
-
+\subsection{Overview of PowerHash}%3.1
+Depending on the core idea of PowerHash, our algorithm can be divided into three phases: Distinction, Big groups grouping, Small groups grouping. The whole process is shown in Figure \ref{fig:pwHash}.
 \begin{figure}
-\includegraphics[width=2.8in]{fig/pwhash}
+\includegraphics[width=.48\textwidth]{fig/pwhash}
 \caption{Overview Intuition of PowerHash.}
 \label{fig:pwHash}
 \end{figure}
 
-Our algorithm contains three phases: \emph{groups distinction}, \emph{big groups grouping}, and \emph{small groups grouping}. The whole process is shown in Figure \ref{fig:pwHash}. The groups distinction phase is to distinguish between the big groups and small groups. First, it estimates the approximate group sizes by the CM sketch. With a user-specified threshold, the groups indexed by keys are divided into big groups and small groups. The big groups grouping phase aims to group the kv-pairs from big groups using the indexing-filling method. It generates an offset index that records the output positions of big groups firstly, then fills the result file by file random access according to the offset index. Since the big groups are in a minority, the index size is small. The small groups grouping phase is to group the kv-pairs from small groups using partitioned hash grouping. After grouping big groups, this division of small groups can avoid unbalance to a great extent because the small group sizes vary over a small range. If a partition is still not fit in memory, it will be split again until its sub-partition can be processed in memory. In the following, we will describe the three phases in detail.
+Distinction phase is to distinguish between the big groups and small groups. First, it gets group sizes by the CM sketch, the distribution of group sizes is obtained at the same time, and it often follows a power-law distribution. Then, it distinguishes between the big groups and small groups based on their rough group size according to the Pareto principle. The CM sketch help us divide the big groups and small groups efficiently.
 
-
-
-
- %the distribution of group sizes is obtained at the same time, and it often follows a power-law distribution. Then, it distinguishes between the big groups and small groups based on their rough group size according to the Pareto principle. The CM sketch help us divide the big groups and small groups efficiently.
-
-%he indexing and filling method is more feasible when the memory is limited.
+Big groups grouping phase aims to group the kv-pairs in big groups by indexing and filling method, it generates an offset index that records the output positions of big groups firstly, then fills the result file by file random access on the basis of the offset index. Because the big groups are minority in data sets, so the offset index size is also small, the indexing and filling method is more feasible when the memory is limited. 
 %Each kv-pair does not need to store in memory and is written to the certain position in the result file directly, by which much repeat access to disk caused by out-of-memory can be avoided.
 
-%To reduce the cost of I/Os and improve the performance, we exploit an intermediate file to record the key and the value size information that is necessary for offset index generation, by which we can avoid to traverse the whole input file. In addition, an output buffer is used when grouping the kv-pairs. In the following, we describe the three phases in detail.
+Small groups grouping phase is to group the kv-pairs in small groups by partitioned hash. After grouping big groups, this division of small groups can avoid unbalance to a great extent because the small group sizes vary over a small range, so partitioned hash grouping is suitable for small groups grouping. If a partition is not fit in memory when hash grouping, the large partition will be redivided until its sub-partition can be processed in memory.
 
-\subsection{Phase 1: Groups Distinction}%3.1
+To reduce the cost of I/Os and improve the performance, we exploit an intermediate file to record the key and the value size information that is necessary for offset index generation, by which we can avoid to traverse the whole input file. In addition, an output buffer is used when grouping the kv-pairs. In the following, we describe the three phases in detail.
 
-As shown in Figure \ref{fig:pwHash}, an in-memory two-dimensional array is maintained to count the rough size for each group, it is the working process of CM sketch. The group size is how many bytes a group occupies. Because many data sets' group sizes follow power-law distributions, according to the Pareto principle, we can distinguish between the big groups and small groups depending on the rough group sizes, and then employ targeted methods to deal with the big groups and small groups, so the first phase is the basis of the whole algorithm.
+\subsection{Phase 1: Distinction}%3.1
 
-First, we need to obtain the group size of each group. The CM sketch can count the frequency of each distinct item in a data set quickly with small space if minor errors can be allowed. In our algorithm, the counting process is the accumulation of the kv-pairs sizes(in bytes) as introduced in section \ref{sec:related}. Though the group sizes counted by CM sketch is inaccurate owing to the collisions of hashing, the CM sketch can ensure that the groups that are real big groups must have great statistical results and the groups with counting results must be real small groups.
-%those groups judged as small group are right and the big groups are not be judged as small groups, by which all big groups are identified accurately in spite of partial small groups are incorrectly identified as big groups.
+The first phase is to distinguish between the big groups and small groups. As shown in Figure \ref{fig:pwHash}, an in-memory two-dimensional array is maintained to count the rough size for each group, it is the working process of CM sketch. The group size is how many bytes a group occupies. Because many data sets' group sizes follow power-law distributions, according to the Pareto principle, we can distinguish between the big groups and small groups depending on the rough group sizes, and then employ targeted methods to deal with the big groups and small groups, so the first phase is the basis of the whole algorithm. 
 
-Then we need to judge which groups are big groups on the basis of the CM sketch where rough group sizes are stored. Because the data set's group sizes follow a power-law distribution, if we can know the ratio $r$ of big groups in the data set, the big groups and small groups can be divided easily. Referring to the Pareto principle(80/20 rule), the number of big groups only occupies around 20\% of the total groups but their total size takes up about 80\% of the total size, the ratio can be set around 0.2, the groups whose group sizes are the top 20\% in the data set are big groups, the rest are small groups. If we sort the whole group sizes, the big groups can be obtained, but the cost of sorting the whole group sizes is great, we need to traverse the input data set again and then sort the rough group sizes. Each row of the CM sketch is the counting result after passing the whole data set, we found that it can reflect the distribution of group sizes roughly, so we determine to sort one row of the CM sketch instead of sort all of group sizes. The width of CM sketch is $w$, if we sort a row of CM sketch in descending order, the threshold between big group sizes and small group sizes is the ${(w*r)}^{th}$ value. The groups whose rough group sizes are larger than the threshold are big groups.
+First, we need to obtain the group size of each group. The CM sketch can count the frequency of each distinct item in a data set quickly with small space if minor errors can be allowed. In our algorithm, the counting process is the accumulation of the kv-pairs sizes(in bytes) as introduced in section \ref{sec:related}. Though the group sizes counted by CM sketch is inaccurate owing to the collisions of hashing, the CM sketch can ensure that the groups that are real big groups must have great statistical results and the groups with counting results must be real small groups.   
+%those groups judged as small group are right and the big groups are not be judged as small groups, by which all big groups are identified accurately in spite of partial small groups are incorrectly identified as big groups. 
+
+Then we need to judge which groups are big groups on the basis of the CM sketch where rough group sizes are stored. Because the data set's group sizes follow a power-law distribution, if we can know the ratio $r$ of big groups in the data set, the big groups and small groups can be divided easily. Referring to the Pareto principle(80/20 rule), the number of big groups only occupies around 20\% of the total groups but their total size takes up about 80\% of the total size, the ratio can be set around 0.2, the groups whose group sizes are the top 20\% in the data set are big groups, the rest are small groups. If we sort the whole group sizes, the big groups can be obtained, but the cost of sorting the whole group sizes is great, we need to traverse the input data set again and then sort the rough group sizes. Each row of the CM sketch is the counting result after passing the whole data set, we found that it can reflect the distribution of group sizes roughly, so we determine to sort one row of the CM sketch instead of sort all of group sizes. The width of CM sketch is $w$, if we sort a row of CM sketch in descending order, the threshold between big group sizes and small group sizes is the ${(w*r)}^{th}$ value. The groups whose rough group sizes are larger than the threshold are big groups. 
 
 The whole distinguishing process can be completed efficiently by the employment of CM sketch, its time cost occupies about 15\% of the total time according to experimental results.
 
-\subsection{Phase 2: Big groups grouping}
+\subsection{Phase 2: Big groups grouping} 
 
-%Big groups grouping phase is the grouping process of big groups.
-In the data sets whose group sizes follow the power-law distributions, the total size of big groups takes up about 80\% of the data set size according to the Pareto principle. If the big groups are processed by the hash-based grouping methods in limited memory, the hash table will be great. Once the hash table becomes too large to be fit in memory, the kv-pairs would be written to and then read from disk frequently, the repeat access to disk reduces the performance of key grouping. Grouping big groups by indexing and filling can reduce the I/O cost above. The big groups are grouped separately in our algorithm, the property that the number of big groups only occupies around 20\% of the total groups makes the offset index smaller, and filling the output files with big groups will lead to relatively large amount of sequential writes but less number of seeks.
-%Indexing and Filling exploits the features of the file random access to complete the key grouping operation of big groups.
+%Big groups grouping phase is the grouping process of big groups. 
+In the data sets whose group sizes follow the power-law distributions, the total size of big groups takes up about 80\% of the data set size according to the Pareto principle. If the big groups are processed by the hash-based grouping methods in limited memory, the hash table will be great. Once the hash table becomes too large to be fit in memory, the kv-pairs would be written to and then read from disk frequently, the repeat access to disk reduces the performance of key grouping. Grouping big groups by indexing and filling can reduce the I/O cost above. The big groups are grouped separately in our algorithm, the property that the number of big groups only occupies around 20\% of the total groups makes the offset index smaller, and filling the output files with big groups will lead to relatively large amount of sequential writes but less number of seeks. 
+%Indexing and Filling exploits the features of the file random access to complete the key grouping operation of big groups. 
 
 Firstly, we need to structure an offset index that records the output positions of big groups. The offset here means the number of bytes from the written position of the group to the beginning of the file. With a specific output order, each big group's write-out position (i.e., offset) can be calculated, it is the accumulation of group sizes of all previous groups that has been accessed, so the first thing we need to do is to to count each big group's accurate size. When a group is judged as a big group, the kv-pairs in the big group will be accumulated according to the unique $key$ of the group like Formula \ref{eq:accurate_size}, the accurate group size is the accumulation of each kv-pair size(in byte).
 \begin{equation}\label{eq:accurate_size}
@@ -57,22 +54,22 @@ the accumulation of group sizes of all previous groups that has been accessed. I
 
 
 %the offset index size is much less than the hash table where kv-pairs are stored, because the offset index only saves some integer --- the offsets---instead of storing kv-pairs. What's more, the big groups are processed separately in our algorithm, and the big groups are minority in the data sets, the space that the offset index occupies can be further reduce.
-
+ 
 After constructing the offset index, the kv-pairs in big groups are written to the certain position in the result file depending on the corresponding offset. In the whole process, only the offset index is always kept in memory, so the memory usage of big groups grouping is very small, so it can be executed with limited memory. Compared to the hash-based grouping methods, each kv-pair does not need to store in hash table but is written to the certain position in the result file directly. Besides the necessary reading from and writing to the disk, there is no extra access to disk caused by the out-of-memory, so it can perform faster in the case of limited available memory as shown in Figure \ref{fig:paretoBig}. The profiling of this process shows that most of time is spent on seek operations during the file filling, this is mainly due to the fact that the writing of kv-pairs is not necessarily sequential, but filling the output files with big groups will lead to relatively large amount of sequential writes but less number of seeks.
 
 \subsection{Phase 3: Small groups grouping}
 
-For a data set whose group sizes follow a power-law distribution, the majority of data set has been written to the result file after dealing with the big groups, the number of the remainder small groups are greater than big groups, if we still employ indexing and filling method to group the kv-pairs in small groups, the size of offset index will be huge, it may cause out-of-memory problem in the case of limited memory. On the other hand, the small group sizes vary over an small range, which can lead to balanced division to a great extent if we partition the small groups based on the available memory. In order to ensure the correctness of key grouping, the partition method we adopt is hashing. So we need to get the partition number that is determined by the available memory and the small groups number.
+For a data set whose group sizes follow a power-law distribution, the majority of data set has been written to the result file after dealing with the big groups, the number of the remainder small groups are greater than big groups, if we still employ indexing and filling method to group the kv-pairs in small groups, the size of offset index will be huge, it may cause out-of-memory problem in the case of limited memory. On the other hand, the small group sizes vary over an small range, which can lead to balanced division to a great extent if we partition the small groups based on the available memory. In order to ensure the correctness of key grouping, the partition method we adopt is hashing. So we need to get the partition number that is determined by the available memory and the small groups number. 
 
-For better analysis, we first define the following identifiers: the total size $T$ of data set, the current available memory $A$, each entry size $sizeof(entry)$ of the hash table in hash grouping. In addition, the total size $S$ of small groups can be got after the first phase , the big group number $b$ can be obtained after the second phase. Combined with the ratio $r$ of big groups, the small group number $s$ is $b*(1-r)/r$. The space occupied when small groups are being processed is $S + sizeof(entry)*s$. Because the actual hash table in small groups key grouping may be larger than the calculation, so we set an expansion factor $\alpha$ to expand the hash table size appropriately. So the partition number $P$ of small groups can be got like Formula \ref{eq:partition_num}.
+For better analysis, we first define the following identifiers: the total size $T$ of data set, the current available memory $A$, each entry size $sizeof(entry)$ of the hash table in hash grouping. In addition, the total size $S$ of small groups can be got after the first phase , the big group number $b$ can be obtained after the second phase. Combined with the ratio $r$ of big groups, the small group number $s$ is $b*(1-r)/r$. The space occupied when small groups are being processed is $S + sizeof(entry)*s$. Because the actual hash table in small groups key grouping may be larger than the calculation, so we set an expansion factor $\alpha$ to expand the hash table size appropriately. So the partition number $P$ of small groups can be got like Formula \ref{eq:partition_num}. 
 \begin{equation}\label{eq:partition_num}
     p = \dfrac{S + \alpha*sizeof(entry)*s}{A}
 \end{equation}
 For a kv-pair in a small groups, calculate the hash value $H_{key}$ first because the key may has various forms, and then hash the kv-pair to a partition depending on the partition id calculated by Formula \ref{eq:partition_hash}.
 \begin{equation}\label{eq:partition_hash}
     id = H_{key} \%  p
-\end{equation}
-Depending on the partition mode, the kv-pairs are hashed to different partitions, then the kv-pairs in small groups are grouped partition-by-partition by hash grouping. If the hash table is too large to be fit in memory when dealing with a partition, the big partition will be divided into two parts and then be re-aggregated one-by-one. The repartition can be reduced a lot due to the balanced division, so the partitioned hash grouping maintains the high performance of hashing grouping.
+\end{equation}  
+Depending on the partition mode, the kv-pairs are hashed to different partitions, then the kv-pairs in small groups are grouped partition-by-partition by hash grouping. If the hash table is too large to be fit in memory when dealing with a partition, the big partition will be divided into two parts and then be re-aggregated one-by-one. The repartition can be reduced a lot due to the balanced division, so the partitioned hash grouping maintains the high performance of hashing grouping. 
 \begin{algorithm}[ht]
     \caption{PowerHash}
   \label{alg:group}
@@ -80,21 +77,21 @@ Depending on the partition mode, the kv-pairs are hashed to different partitions
     \Require  File \emph{F}, ratio \emph{r}, available memory \emph{A}, width \emph{w}, depth \emph{d}
     \Ensure result files $R$
     \State \emph{C:=} a two-dimensional array with width \emph{w} and depth \emph{d}
-    \State \emph{H:=}\{\textbf{for} each \emph{i} \textbf{do} generate a hash function $h_i$, \emph{0 $\le$ i $\textless$d}\}
+    \State \emph{H:=}\{\textbf{for} each \emph{i} \textbf{do} generate a hash function $h_i$, \emph{0 $\le$ i $\textless$d}\}    
     \State $key\_file :=$ a file of recording the key and value size
     \State initialize \emph{C = } \{\emph{C}[$i$][$j$] = 0, \emph{0 $\le$ i $\textless$d}, \emph{0 $\le$ j $\textless$ w} \}
     \For{each input $\langle key,value\rangle$ in \emph{F}}
     	\State write $\langle key,valuesize\rangle$ to the \emph{key\_file}
      	\For{ each $h_{i} \in H $, \emph{0 $\le$ i $\textless$d} }
           \State \emph{C}[$i$][$h_{i}(key)$] += $sizeof(key) + sizeof(value)$
-        \EndFor
+        \EndFor  
     \EndFor
     \State \emph{T:=} a group size table for the big groups
     \State calculate threshold \emph{t} between big groups and small groups.
     \For{each $\langle key,valuesize\rangle$ in \emph{key\_file}}
     	\State group size $f_{key}$ = \emph{min}(C[$i$][$h_{i}(key)$]), \emph{0 $\le$ i $\textless$d}
     	\If{ $f_{key} \textgreater$ \emph{t}}
-    		\State insert the $\langle key,valuesize\rangle$ into \emph{T}
+    		\State insert the $\langle key,valuesize\rangle$ into \emph{T}    
     	\EndIf    	
     \EndFor
     \State calculte partition number \emph{p} depending on Fumula \ref{eq:partition_num}
@@ -104,9 +101,9 @@ Depending on the partition mode, the kv-pairs are hashed to different partitions
     	\If {there is a match in $O$ }
     		\State write the $\langle key,value\rangle$ into $R$
     		\State update the corresponding offset in $O$
-    	\Else
+    	\Else 
     		\State $id = H(key) \% p$
-    		\State insert the $\langle key,value\rangle$ into $s_{id}$
+    		\State insert the $\langle key,value\rangle$ into $s_{id}$ 
     	\EndIf
     \EndFor
     \For{each $s_{id}$, \emph{0 $\le$ i $\textless$ p} }
@@ -117,16 +114,16 @@ Depending on the partition mode, the kv-pairs are hashed to different partitions
     \end{algorithmic}
 \end{algorithm}
 
-\subsection{Algorithm Analysis}
+\subsection{Algorithm analyse}
 We summarize the whole process including the three phases in Algorithm \ref{alg:group}. The algorithm starts by creating a two-dimensional array with width \emph{w} and depth \emph{d}, the array is the CM sketch. Then each $\langle key, value\rangle$ pairs read from the input file \emph{F} is hashed to the CM sketch to calculate the rough size of each group. In order to avoid traversing the whole input file unnecessarily in the second phase, we use an intermediate file \emph{key\_file} to record the key and its corresponding value size in $\langle key, valuesize\rangle$ format, i.e., we transform the original format $\langle key, value\rangle$ of the input data set into $\langle key, valuesize\rangle$ format, by which we can reduce the I/O cost and the computation of accurate group sizes in the second phase.
 
 The threshold \emph{t} between the big groups and small groups is calculated depending on the CM sketch and the ratio $r$ of big groups(Line 12), we first sort one row of the two-dimensional array \emph{C} in descending order, the threshold \emph{t} is the ${(w*r)}^{th}$ element of the sorted row. Then the groups can be distinguished by their rough sizes. While traversing the \emph{key\_file}, the $\langle key, valuesize\rangle$ belonging to big groups are insert to the group size table to calculate the accurate groug size like Formula \ref{eq:accurate_size}. The other $\langle key, valuesize\rangle$ pairs are accumulated to get the total size of small groups. We can get the group size table after traversing the \emph{key\_file}, the partition number $p$ can be also calculated like Formula \ref{eq:partition_num}.
 
-The $Convert$ function converts the group size table to offset index (Line 22), in more details, traverses the elements in table $T$ from top to down and then accumulate the group sizes as the offset depending on the traversing order. The first entry of the table $T$(i.e., the first $\langle key, groupsize\rangle$) is the first group, so the initial offset of the entry equals to 0, it means that the first kv-pair mapped to the group will be stored in the beginning of the result file. Define the group size of the previous entry as $group_{pre}$, which means that the size of the previous group is $group_{pre}$. Define the initial offset of the previous group as ${off}_{pre}$. So the offset of current entry ${off}_{cur}$ equals to the sum of ${off}_{pre}$ and $group_{pre}$. After calculate the offset of each group, we will obtain an in-memory offset index which contains $\langle key,offset\rangle$ information.
+The $Convert$ function converts the group size table to offset index (Line 22), in more details, traverses the elements in table $T$ from top to down and then accumulate the group sizes as the offset depending on the traversing order. The first entry of the table $T$(i.e., the first $\langle key, groupsize\rangle$) is the first group, so the initial offset of the entry equals to 0, it means that the first kv-pair mapped to the group will be stored in the beginning of the result file. Define the group size of the previous entry as $group_{pre}$, which means that the size of the previous group is $group_{pre}$. Define the initial offset of the previous group as ${off}_{pre}$. So the offset of current entry ${off}_{cur}$ equals to the sum of ${off}_{pre}$ and $group_{pre}$. After calculate the offset of each group, we will obtain an in-memory offset index which contains $\langle key,offset\rangle$ information. 
 
-Filling the result file phase needs another pass of the input file(line 22-25). For a kv-pair, get the offset ${off}_{key}$ by searching the offset index $O$, if there is a match in the index, it belongs to a big group and will be written to the ${off}^{th}_{key}$ bytes of the result file \emph{R} depending on the offset, if there is no match, it will be written to the corresponding partition in \emph{P}. With this kv-pair from input file having been output, the current offset of the corresponding group will increase the size of the kv-pair in bytes, which indicates the next kv-pair mapped to the same group will be stored in the ${({off}_{cur} + sizeof(\langle key,value\rangle ))}^{th}$ bytes of the file \emph{R}, it is the update operation in line 25.
+Filling the result file phase needs another pass of the input file(line 22-25). For a kv-pair, get the offset ${off}_{key}$ by searching the offset index $O$, if there is a match in the index, it belongs to a big group and will be written to the ${off}^{th}_{key}$ bytes of the result file \emph{R} depending on the offset, if there is no match, it will be written to the corresponding partition in \emph{P}. With this kv-pair from input file having been output, the current offset of the corresponding group will increase the size of the kv-pair in bytes, which indicates the next kv-pair mapped to the same group will be stored in the ${({off}_{cur} + sizeof(\langle key,value\rangle ))}^{th}$ bytes of the file \emph{R}, it is the update operation in line 25. 
 
-After grouping the big groups successfully, the small groups in each partitions stored in the disk are still unordered, these small group partitions are read into memory partition-by-partition and processed by the hash grouping, then these kv-pairs in small group partitions are appended to the result file \emph{R} after grouping(line 31-33).
+After grouping the big groups successfully, the small groups in each partitions stored in the disk are still unordered, these small group partitions are read into memory partition-by-partition and processed by the hash grouping, then these kv-pairs in small group partitions are appended to the result file \emph{R} after grouping(line 31-33). 
 
 
 
