@@ -1,5 +1,5 @@
 \section{Experimental Evaluation}
-
+\label{sec:experiment}
 
 This section presents the performance evaluation for PowerHash. We compare our work against existing typical grouping approaches, merge-sort \cite{dean2008mapreduce} and memory-constraint hash \cite{bartholomew2012mariadb}. For merge-sort, we downloaded the implementation from the official sites. There is no source code for memory-constraint hash available, so we implemented our own hash aggregation version following the pseudo code in SQL database \cite{HashAggregate15}. We used typical real data sets:  (a) the Higgs\footnote{http://snap.standford.edu/data/higgs-twitter.html} Twitter data set, providing the information about activity on Twitter during the discovery of Higgs-boson; (b) web-BerkStan \footnote{http://snap.stanford.edu/data/web-BerkStan.html} data set, a web graph containing 685,230 nodes and 7,600,595 edges;  (c) Google\footnote{http://snap.standford.edu/data/web-Google.txt.gz} data set, a web graph data set containing 875,713 nodes and 5,105,039 edges; and a simulation data set that obey a power-law distribution Pareto. Table 1 summarizes the data sets used.
 
@@ -20,26 +20,26 @@ This section presents the performance evaluation for PowerHash. We compare our w
 
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Overall performance on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterMemTime.eps}\label{fig:twitterMemTime}}\ \
+  \subfloat[Overall performance on Twitter]{\includegraphics[width = 1.61in]{fig/twitterMemTime.eps}\label{fig:twitterMemTime}}\ \
     \hspace{0.5pt}
-  \subfloat[Overall performance on web-BerkStan]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/webMemTime.eps}\label{fig:webMemTime}}\ \
+  \subfloat[Overall performance on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webMemTime.eps}\label{fig:webMemTime}}\ \
    \hspace{0.5pt}
-  \subfloat[Overall performance on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleMemTime.eps}\label{fig:googleMemTime}}\ \
+  \subfloat[Overall performance on Google]{\includegraphics[width = 1.61in]{fig/googleMemTime.eps}\label{fig:googleMemTime}}\ \
      \hspace{0.5pt}
-  \subfloat[Overall performance on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoMemTime.eps}\label{fig:paretoMemTime}}\ \ 
+  \subfloat[Overall performance on Pareto]{\includegraphics[width = 1.61in]{fig/paretoMemTime.eps}\label{fig:paretoMemTime}}\ \ 
     \caption{Overall performance on various data sets.}
   \label{fig:overallPerformance} 
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Performance comparison on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterComparison.eps}\label{fig:twitterComparison}}\ \
+  \subfloat[Performance comparison on Twitter]{\includegraphics[width = 1.61in]{fig/twitterComparison.eps}\label{fig:twitterComparison}}\ \
     \hspace{0.5pt}
-  \subfloat[Performance comparison on web-BerkStan]{\includegraphics[width = 1.61in, height =3.5cm]{fig/webComparison.eps}\label{fig:webComparison}}\ \
+  \subfloat[Performance comparison on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webComparison.eps}\label{fig:webComparison}}\ \
    \hspace{0.5pt}
-  \subfloat[Performance comparison on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleComparison.eps}\label{fig:googleComparison}}\ \
+  \subfloat[Performance comparison on Google]{\includegraphics[width = 1.61in]{fig/googleComparison.eps}\label{fig:googleComparison}}\ \
      \hspace{0.5pt}
-  \subfloat[Performance comparison on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoComparison.eps}\label{fig:paretoComparison}}\ \ 
+  \subfloat[Performance comparison on Pareto]{\includegraphics[width = 1.61in]{fig/paretoComparison.eps}\label{fig:paretoComparison}}\ \ 
     \caption{Performance comparison on various data sets.}
   \label{fig:performanceComparison} 
 \end{figure*}
@@ -61,26 +61,26 @@ On the whole, our algorithm is almost distributed lower than other algorithms in
 Compared to merge-sort and memory-constraint hash, the runtime gap is greatest at the beginning of the line charts, in which case the runtime of memory-constraint hash is at least 2 times than PowerHash with the same memory on the four data set, the multiples of runtime between merge-sort and PowerHash is greater. Then their gap continues to decline with the available memory increasing. Even if memory-constraint hash reaches the stable state, our algorithm runs at least 25\% faster on web-BerkStan and at least 60\% faster on Pareto as shown in Figure \ref{fig:webComparison} \ref{fig:paretoComparison}. Memory-constraint hash can achieve the same performance on Twitter and Google, its time consumption is also longer than PowerHash with the same memory before this point where they have the same runtime in Figure \ref{fig:twitterComparison} \ref{fig:googleComparison}, it can perform better than PowerHash on Google when the memory is sufficient. 
 %With the same time cost, the memory usage of our algorithm is smallest in most cases, because the PowerHash runtime almost keeps stable, it can reach the best state by the smallest memory compared to the other two approaches.
    
-We make the following analysis to this phenomenon: recall to section \ref{sec:related}, for merge-sort algorithm, there is unnecessary computational overhead in aggregating kv-pairs, the sort process reduces its performance, its time cost is always highest even if the memory is enough. For memory-constraint hash, one or more buckets will be selected to spill to disk when the memory used has reached the threshold, these spilled partitions will be read back to re-aggregate subsequently. The power-law distributions makes it more difficult to divide the work data into small uniform portions. For a larger bucket spilled to disk, subsequent reading back and re-aggregating may lead to recursively execute the algorithm many times when the memory is limited, the I/O overhead increases sharply. However, PowerHash deals with the big groups and small groups separately, the big groups processed by indexing and filling, and the small groups are processed via partitioned hash grouping approach, the two grouping method used to process the big groups and small groups can be carried out with limited memory and avoid repeat access to disk as introduced in section \ref{sec:hash}, so the performance of memory-constraint hash is slower than PowerHash with the same limited memory. If there is enough memory, all kv-pairs can be loaded in memory, memory-constraint hash degenerate into the pure hashing grouping method, its performance may be faster than PowerHash as shown in Figure \ref{fig:googleComparison}. Therefore, our algorithm is able to more efficient in limited memory compared to other algorithms.
+We make the following analysis to this phenomenon: recall to section \ref{sec:related}, for merge-sort algorithm, there is unnecessary computational overhead in aggregating kv-pairs, the sort process reduces its performance, its time cost is always highest even if the memory is enough. For memory-constraint hash, one or more buckets will be selected to spill to disk when the memory used has reached the threshold, these spilled partitions will be read back to re-aggregate subsequently. The power-law distributions makes it more difficult to divide the work data into small uniform portions. For a larger bucket spilled to disk, subsequent reading back and re-aggregating may lead to recursively execute the algorithm many times when the memory is limited, the I/O overhead increases sharply. However, PowerHash deals with the big groups and small groups separately, the big groups processed by indexing-filling, and the small groups are processed via partitioned hash grouping approach, the two grouping method used to process the big groups and small groups can be carried out with limited memory and avoid repeat access to disk as introduced in section \ref{sec:hash}, so the performance of memory-constraint hash is slower than PowerHash with the same limited memory. If there is enough memory, all kv-pairs can be loaded in memory, memory-constraint hash degenerate into the pure hashing grouping method, its performance may be faster than PowerHash as shown in Figure \ref{fig:googleComparison}. Therefore, our algorithm is able to more efficient in limited memory compared to other algorithms.
 
 \subsection{Parameters Evaluation}
 \begin{figure*}[htbp]
     \centering
-  \subfloat[Ratio test on Twitter]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/twitterRatio.eps}\label{fig:twitterRatio}}\ \
+  \subfloat[Ratio test on Twitter]{\includegraphics[width = 1.61in]{fig/twitterRatio.eps}\label{fig:twitterRatio}}\ \
     \hspace{0.5pt}
-  \subfloat[Ratio test on web-BerkStan]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/webRatio.eps}\label{fig:webRatio}}\ \
+  \subfloat[Ratio test on web-BerkStan]{\includegraphics[width = 1.61in]{fig/webRatio.eps}\label{fig:webRatio}}\ \
    \hspace{0.5pt}
-  \subfloat[Ratio test on Google]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/googleRatio.eps}\label{fig:googleRatio}}\ \
+  \subfloat[Ratio test on Google]{\includegraphics[width = 1.61in]{fig/googleRatio.eps}\label{fig:googleRatio}}\ \
      \hspace{0.5pt}
-  \subfloat[Ratio test on Pareto]{\includegraphics[width = 1.61in, height = 3.5cm]{fig/paretoRatio.eps}\label{fig:paretoRatio}}\ \ 
+  \subfloat[Ratio test on Pareto]{\includegraphics[width = 1.61in]{fig/paretoRatio.eps}\label{fig:paretoRatio}}\ \ 
     \caption{Ratio test on various data sets.}
   \label{fig:ratio} 
 \end{figure*}
 In the work, we also evaluate the impact on different parameters of PowerHash. We have experimentally evaluated on various data sets in Table \ref{tab:dataset} and theoretically analyzed the effects of these parameters on the algorithm. Figure \ref{fig:ratio} shows the strong scalability results for the algorithm.
 
-\textbf{The ratio of big groups}. The ratio of big groups is the most important parameter in PowerHash, it determines the division between big groups and small groups. Compared with the real ratio of big groups in the data sets, a smaller ratio may lead to the unbalance of small group partitions because some big groups are judged as small groups, and then cause the redivision of small groups; a bigger ratio may result in a great offset index of big groups and then causes the waste of memory, so the selection of ratio is important. As shown in Figure \ref{fig:ratio}, the ratio is set from 0 to 1, the available memory is fixed and set as 50MB, PowerHash becomes the partitioned hash method when the ratio is 0, it turns to the indexing and filling method when the ratio is 1, their memory usage is much larger than 50MB in both cases and the out-of-memory problem will occur. With the ratio varying, the execution time decreases and then stays stable, the memory usage continues to decline and then continues to increase, the point with least memory usage represents the offset index size and small group partition sizes are the most suitable, and the memory usage is under 50MB in this case, i.e., the algorithm can be executed in memory smoothly without out-of-memory problem. In Figure \ref{fig:webRatio} \ref{fig:googleRatio} \ref{fig:paretoRatio}, the memory usage is lowest when the ratio is 0.2, this phenomenon satisfies the Pareto principle. In Figure \ref{fig:twitterRatio}, our algorithm performs best when the ratio is 0.3. The experiment on these data sets can reflect the most appropriate ratio of big groups is the value around 0.2.
+\textbf{The ratio of big groups}. The ratio of big groups is the most important parameter in PowerHash, it determines the division between big groups and small groups. Compared with the real ratio of big groups in the data sets, a smaller ratio may lead to the unbalance of small group partitions because some big groups are judged as small groups, and then cause the redivision of small groups; a bigger ratio may result in a great offset index of big groups and then causes the waste of memory, so the selection of ratio is important. As shown in Figure \ref{fig:ratio}, the ratio is set from 0 to 1, the available memory is fixed and set as 50MB, PowerHash becomes the partitioned hash method when the ratio is 0, it turns to the indexing-filling method when the ratio is 1, their memory usage is much larger than 50MB in both cases and the out-of-memory problem will occur. With the ratio varying, the execution time decreases and then stays stable, the memory usage continues to decline and then continues to increase, the point with least memory usage represents the offset index size and small group partition sizes are the most suitable, and the memory usage is under 50MB in this case, i.e., the algorithm can be executed in memory smoothly without out-of-memory problem. In Figure \ref{fig:webRatio} \ref{fig:googleRatio} \ref{fig:paretoRatio}, the memory usage is lowest when the ratio is 0.2, this phenomenon satisfies the Pareto principle. In Figure \ref{fig:twitterRatio}, our algorithm performs best when the ratio is 0.3. The experiment on these data sets can reflect the most appropriate ratio of big groups is the value around 0.2.
  
-\textbf{The parameters of CM sketch}. The next experiment shows the effect of the CM sketch parameters. Recall from Distinction phase in section \ref{sec:hash} that the CM sketch are employed to reflect the distributions of group sizes, we sort a row of the CM sketch and then obtain the threshold between big group sizes and small group sizes according to the big groups ratio, then divide the big groups and small groups based on their rough sizes, so the width and depth of CM sketch can influence the judgement of big groups and small groups. According to the CM sketch introduction in section \ref{sec:related}: if the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth is $\lceil ln(1/\delta)\rceil $, the width is $\lceil e/\varepsilon\rceil $, the depth can be set easily. The width of CM sketch determines the accuracy of threshold, it directly affects the division between big groups and small groups in Distinction phase. Figure 7 shows the memory usage and time cost on different data sets with the width varying.
+\textbf{The parameters of CM sketch}. The next experiment shows the effect of the CM sketch parameters. Recall from Distinction phase in section \ref{sec:hash} that the CM sketch are employed to reflect the distributions of group sizes, we sort a row of the CM sketch and then obtain the threshold between big group sizes and small group sizes according to the big groups ratio, then divide the big groups and small groups based on their rough sizes, so the width and depth of CM sketch can influence the distinction of big groups and small groups. According to the CM sketch introduction in section \ref{sec:related}: if the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth is $\lceil ln(1/\delta)\rceil $, the width is $\lceil e/\varepsilon\rceil $, the depth can be set easily. The width of CM sketch determines the accuracy of threshold, it directly affects the division between big groups and small groups in Distinction phase. Figure 7 shows the memory usage and time cost on different data sets with the width varying.
 \begin{figure}[htbp]
 	\label{fig: CMPara}
     \subfloat[Runtime with different width]{\includegraphics[width = 1.68in, height = 3.5cm]{fig/CMTime.eps}\label{fig:CMTime}}
@@ -93,7 +93,7 @@ In the work, we also evaluate the impact on different parameters of PowerHash. W
 The runtime on each data set is almost steady as shown in Figure \ref{fig:CMTime}, the memory usage is influenced by the width of CM sketch as shown in Figure \ref{fig:CMMem}, it is appropriate to set the width from 200000 to 800000 with little memory waste.   
 
 \subsection{Phase Evaluation}
-In this subsection, we discuss the impact and interrelated factor on Distinction phase, Big groups grouping phase, Small groups grouping phase. Figure 8 shows the time percentage and memory consumption on the three phases. 
+In this subsection, we discuss the impact and interrelated factor on \emph{groups distinction}, \emph{big groups grouping}, and \emph{small groups grouping}. Figure 8 shows the time percentage and memory consumption on the three phases. 
 
 \begin{figure}[htbp]	
 	\label{fig: PhaseEvaluation}
@@ -104,9 +104,9 @@ In this subsection, we discuss the impact and interrelated factor on Distinction
 		
 \end{figure}
 
-Figure \ref{fig:TimePercentage} shows the time percentage of the three phases on different data sets. We can notice that the time percentage of Distinction phase is close to 15\%, i.e., the preparation time of key grouping operation occupies 15\% of the total time. The Big groups grouping phase takes up most of the total time, the Small groups grouping phase groups the small groups with little time cost. This phenomenon satisfies expected result, the third phase is finished in memory so its time cost is small, the majority of the data set is processed in the second phase, and lots of time is spent on seeking operations, so its time percentage is highest.
+Figure \ref{fig:TimePercentage} shows the time percentage of the three phases on different data sets. We can notice that the time percentage of groups distinction phase is close to 15\%, i.e., the preparation time of key grouping operation occupies 15\% of the total time. The big groups grouping phase takes up most of the total time, the small groups grouping phase groups the small groups with little time cost. This phenomenon satisfies expected result, the third phase is finished in memory so its time cost is small, the majority of the data set is processed in the second phase, and lots of time is spent on seeking operations, so its time percentage is highest.
 
-We also compare the memory usage for the three phases on various data sets as depicted in Figure \ref{fig:MemPhase}. The mark point on each line separates the three phases. The memory usage continues to increase and keeps stable in the first phase, the memory usage in stale state is the size of CM sketch. Then the memory usage increases over time gradually in the second phase, its growth represents the generation of offset index, it decreases after the memory occupied by the CM sketch being released. In the third phase, the memory usage is also steady because the partition of small groups is balanced and each hash table in grouping process is almost the same.
+We also compare the memory usage for the three phases on various data sets as depicted in Figure \ref{fig:MemPhase}. The mark point on each line separates the three phases. The memory usage continues to increase and keeps stable in the first phase, the memory usage in stable state is the size of CM sketch. Then the memory usage increases over time gradually in the second phase, its growth represents the generation of offset index, it decreases after the memory occupied by the CM sketch being released. In the third phase, the memory usage is also steady because the partition of small groups is balanced and each hash table in grouping process is almost the same.
 
 
 
