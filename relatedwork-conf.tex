@@ -27,9 +27,11 @@ Some SQL databases (e.g., MariaDB) that use a hash grouping aggregation strategy
 
 % \textcolor{red}{should be rewrite, please refer to PowerGraph paper. The goal is to tell readers the group sizes are indeed following powerlaw distribution. Besides the figure, you might want to show some numbers, like 99\% data are from top 10\% big groups, or some thing like that. You might also want to say some thing that for the extremely large groups, the traditional grouping tech will not work. and say why}
 
-Power-law distributions \cite{MEJPower} occur in an extraordinarily diverse range of phenomena, e.g., the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}. As shown in Figure \ref{fig: distributions}, the group sizes in four data sets(see Sec. \ref{sec:experiment} for dataset description) are also follow the power-law distributions and vary over an enormous dynamic range. The distributions are all right-skewed, it means that a bulk of groups occurs for fairly small sizes and only a small number of groups are much higher, in more detail, about 80\% data are from top 20\% big groups in Twitter, web-BerkStan and Google, the top 20\% big groups occupy about 90\% size in Pareto.
+Power-law distributions \cite{MEJPower} occur in an extraordinarily diverse range of phenomena, e.g., the frequency of use of words in any human language \cite{George1949Human}, the number of hits on web pages \cite{Adamic2000The}. As shown in Figure \ref{fig: distributions}, the group sizes in four data sets(see Sec. \ref{sec:experiment} for dataset description) are also follow the power-law distributions and vary over an enormous dynamic range. For some extremely large groups whose sizes are larger than the available memory, when the groups are processed by some traditional grouping approaches, the endless recursive reading from and writing to disk may occur, and then these approaches can not work.
 
-For some extremely large groups whose sizes are larger than the available memory, when the groups are processed by some traditional grouping approaches, the endless recursive reading from and writing to disk may occur, and then these approaches can not work.
+The distributions are all right-skewed, it means that a bulk of groups occurs for fairly small sizes and only a small number of groups are much higher, in more detail, about 80\% data are from top 20\% big groups in Twitter, web-BerkStan and Google, the top 20\% big groups occupy about 90\% size in Pareto. This phenomena roughly conforms to the 80/20 rule(also known as Pareto principle)\cite{Box1986An} which states that roughly 80\% of the effects come from 20\% of the causes for many events. Mathematically, the 80/20 rule is roughly followed by a power-law distribution for a particular set of parameters.
+
+
 
 
 
@@ -48,39 +50,21 @@ For some extremely large groups whose sizes are larger than the available memory
 %For a data set whose group sizes follow a power-law distribution, we can distinguish between the big groups and small groups roughly on the basis the Pareto principle, the ratio between big groups and small groups obeys the 80/20 rule.
 %We extract the groups that are the top 20\% in size from four data sets, these big groups occupy about 80\% of the data sets as shown in Table \ref{tab:percentage}.
 
-\begin{comment}
-\begin{table}
-  \caption{Percentage of the size of the big groups}
-  \label{tab:percentage}
-  \begin{tabular}{cccc}
-    \toprule
-    dataset & total size & big group size & percentage\\
-    \midrule
-    Twitter & 180.4MB & 142MB & 78\%\\	
-	web-BerkStan & 102.5MB & 80.0MB &78\%\\
-	Google & 97.2MB & 61M & 63\%
-	Pareto  & 575.4MB & 519MB & 90\%\\
-    \bottomrule
-  \end{tabular}
-\end{table}
-\end{comment}
+
 
 
 \subsection{The Count-Min Sketch}
 
 The count-min sketch (CM sketch)\cite{Cormode2009Count},\cite{10.1007/978-3-540-24698-5_7} is a probabilistic data structure that serves as a frequency table of events in a data stream, it uses hash functions to map events to frequencies at the expense of overcounting some events due to collisions.
 
-A CM sketch is represented by a two-dimensional array counting with width $w$ and depth $d$. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions. The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly.
+A CM sketch is represented by a two-dimensional array counting with width $w$ and depth $d$. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family. The space used by Count-Min sketches is the two-dimensional array and $d$ hash functions. The CM sketch is simple to construct and counting the frequencies of the unique items in data stream quickly. The count-min sketch is named after the two basic operations, counting first and computing the minimum next. 
 
 %\textcolor{red}{the following paragraphs should be rewriten, what is $h_{j}$ ?  Also, please give more intuitions.}
 
-%\emph{Data Structure}: A CM sketch is represented by a two-dimensional array counts with width $w$ and depth $d$. If the error of group sizes is within a factor of $ \varepsilon $ with probability $ \delta$, the depth $d$ is $\lceil ln(1/\delta) \rceil $, the width $w$ is $\lceil e/\varepsilon\rceil $. Each entry of the array is initially zero. Additionally, $d$ hash functions $h_{1} ...h_{d}$ are chosen uniformly at random from a pairwise-independent family.
+\emph{Frequency Counting}: When it gets an item $a_{i}$ with a quantity of $c_{i}$ , then $c_{i}$ is added to one count in each row; the counter is determined by the $d$ hash function. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(a_{i})]\leftarrow count[j,h_{j}(a_{i})] + c_{i}$.
+ 
+\emph{Frequency Computing}: The frequency of a unique item $a_{i}$ is the minimum of statistical results in each row, for $\forall 1 \leq j \leq d$, it is given by $f_{i} = min_{j}count[j,h_{j}(a_{i})]$.
 
-The count-min sketch is named after the two basic operations, counting first and computing the minimum next. When it gets an item $a_{i}$ with a quantity of $c_{i}$ , then $c_{i}$ is added to one count in each row; the counter is determined by the $d$ hash function. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(a_{i})]\leftarrow count[j,h_{j}(a_{i})] + c_{i}$. After counting the frequency roughly, the frequency of a unique item $a_{i}$ is the minimum of statistical results in each row, for $\forall 1 \leq j \leq d$, it is given by $f_{i} = min_{j}count[j,h_{j}(a_{i})]$.
-
-On the other hand, each row of the CM sketch can reflect the distribution of group sizes, this property can help us distinguish the big groups and small groups with avoiding large-scale sorting.
-
-%In our algorithm, the CM sketch will be used to counting the group sizes in the data sets, the distinction between big groups and small groups is based on these rough group sizes. When calculating the group sizes, the CM sketch has the two basic operations: counting first and computing the minimum next.
-%We first traverse the input data set to be grouped, When getting a $\langle key, value\rangle$ pair, the group that this kv-pair belongs to can beobtained by its unique $key$, the group size will be updated by the kv-pair size $sizeof(key)$+ $sizeof(value)$, then $sizeof(kv)$ are added to one count in each row; the counter is determined by the hash functions. Formally, set $\forall 1 \leq j \leq d: count[j,h_{j}(key)]\leftarrow count[j,h_{j}(key)] + sizeof(key) + sizeof(value)$. After counting, the size to a group with $key$ is given by $f_{key} = min_{j}count[j,h_{j}(key)]$.
+%On the other hand, each row of the CM sketch can reflect the distribution of group sizes, this property can help us distinguish the big groups and small groups with avoiding large-scale sorting.
 
 Our strategy is to leverage the CM sketch to counting the group sizes in the data set roughly, the rough group sizes are used to distinguish between the big groups and small groups depending on Pareto principle. Then the big groups and small groups are processed separately, the big groups are grouped by the indexing-filling method to reduce the I/O cost, the small groups are processed by partitioned hash grouping approach. PowerHash can finish the key grouping operation in limited memory with high efficiency.
