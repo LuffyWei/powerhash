@@ -15,133 +15,114 @@
 \citation{momjian2001postgresql}
 \citation{agrawal2005database}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\newlabel{sec:intro}{{I}{1}}
 \citation{Cormode2009Count}
-\citation{Hellerstein1996Query}
 \citation{dean2008mapreduce}
 \citation{nasir2015power}
 \citation{mysql2009mysql}
 \citation{boicea2012mongodb}
 \citation{momjian2001postgresql}
 \citation{agrawal2005database}
-\citation{mysql2009mysql}
+\citation{bartholomew2012mariadb}
 \citation{Bratbergsengen1984Hashing}
+\citation{HashAggregate15}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:paretoBig}{{1a}{2}}
 \newlabel{sub@fig:paretoBig}{{(a)}{a}}
 \newlabel{fig:paretoSmall}{{1b}{2}}
 \newlabel{sub@fig:paretoSmall}{{(b)}{b}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Performance comparison of big groups and small groups. The big groups and small groups are selected from a simulation data set Pareto, the group sizes of Pareto follow a power-law distribution.\relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Performance comparison of big groups and small groups.\relax }}{2}}
 \newlabel{fig: big and small}{{1}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Performance comparison on big groups}}}{2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Performance comparison on small groups}}}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}}
 \newlabel{sec:related}{{II}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Merge-Sort Grouping Algorithm}{2}}
-\citation{bartholomew2012mariadb}
-\citation{Bratbergsengen1984Hashing}
-\citation{HashAggregate15}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Commonly Used Grouping Implementations}{2}}
 \citation{MEJPower}
-\citation{F1913Das}
 \citation{George1949Human}
 \citation{Adamic2000The}
-\citation{Cox1995The}
-\citation{Kohli2004Market}
-\citation{Willis1922Some}
-\citation{Pareto1965Cours}
 \citation{Box1986An}
-\citation{MEJPower}
-\citation{Gen2000Network}
 \citation{Cormode2009Count}
 \citation{10.1007/978-3-540-24698-5_7}
-\citation{10.1007/978-3-540-24698-5_7}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Memory-Constraint Hash Grouping in SQL database}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Power-Law Distributions}{3}}
-\newlabel{eq:power-law}{{1}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}The Count-Min Sketch}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview Intuition of PowerHash.\relax }}{4}}
-\newlabel{fig:pwHash}{{2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}PowerHash Design and Implementation}{4}}
-\newlabel{sec:hash}{{III}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Overview of Powerhash}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Phase 1: Distinction}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Phase 2: Big groups grouping}{5}}
-\newlabel{eq:accurate_size}{{2}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The offset index generation.\relax }}{5}}
-\newlabel{fig:convert}{{3}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Phase 3: Small groups grouping}{5}}
-\newlabel{eq:partition_num}{{3}{6}}
-\newlabel{eq:partition_hash}{{4}{6}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces PowerHash\relax }}{6}}
-\newlabel{alg:group}{{1}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Algorithm analyse}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The group size distributions for different data sets.\relax }}{3}}
+\newlabel{fig: distributions}{{2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Group Size Distribution}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}The Count-Min Sketch}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}PowerHash Design and Implementation}{3}}
+\newlabel{sec:hash}{{III}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Overview Intuition of PowerHash.\relax }}{4}}
+\newlabel{fig:pwHash}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Phase 1: Groups Distinction}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Phase 2: Big groups grouping}{4}}
+\newlabel{eq:accurate_size}{{1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The offset index generation.\relax }}{5}}
+\newlabel{fig:convert}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Phase 3: Small groups grouping}{5}}
+\newlabel{eq:partition_num}{{2}{5}}
+\newlabel{eq:partition_hash}{{3}{5}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces PowerHash\relax }}{5}}
+\newlabel{alg:group}{{1}{5}}
 \citation{dean2008mapreduce}
 \citation{bartholomew2012mariadb}
 \citation{HashAggregate15}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Experimental Evaluation}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Data sets\relax }}{7}}
-\newlabel{tab:dataset}{{I}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Overall Performance Evaluation}{7}}
-\newlabel{fig:twitterMemTime}{{4a}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Algorithm Analysis}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Experimental Evaluation}{6}}
+\newlabel{sec:experiment}{{IV}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Data sets\relax }}{6}}
+\newlabel{tab:dataset}{{I}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Overall Performance Evaluation}{6}}
+\newlabel{fig:twitterMemTime}{{5a}{7}}
 \newlabel{sub@fig:twitterMemTime}{{(a)}{a}}
-\newlabel{fig:webMemTime}{{4b}{8}}
+\newlabel{fig:webMemTime}{{5b}{7}}
 \newlabel{sub@fig:webMemTime}{{(b)}{b}}
-\newlabel{fig:googleMemTime}{{4c}{8}}
+\newlabel{fig:googleMemTime}{{5c}{7}}
 \newlabel{sub@fig:googleMemTime}{{(c)}{c}}
-\newlabel{fig:paretoMemTime}{{4d}{8}}
+\newlabel{fig:paretoMemTime}{{5d}{7}}
 \newlabel{sub@fig:paretoMemTime}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Overall performance on various data sets.\relax }}{8}}
-\newlabel{fig:overallPerformance}{{4}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overall performance on Twitter}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Overall performance on web-BerkStan}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Overall performance on Google}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Overall performance on Pareto}}}{8}}
-\newlabel{fig:twitterComparison}{{5a}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Overall performance on various data sets.\relax }}{7}}
+\newlabel{fig:overallPerformance}{{5}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overall performance on Twitter}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Overall performance on web-BerkStan}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Overall performance on Google}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Overall performance on Pareto}}}{7}}
+\newlabel{fig:twitterComparison}{{6a}{7}}
 \newlabel{sub@fig:twitterComparison}{{(a)}{a}}
-\newlabel{fig:webComparison}{{5b}{8}}
+\newlabel{fig:webComparison}{{6b}{7}}
 \newlabel{sub@fig:webComparison}{{(b)}{b}}
-\newlabel{fig:googleComparison}{{5c}{8}}
+\newlabel{fig:googleComparison}{{6c}{7}}
 \newlabel{sub@fig:googleComparison}{{(c)}{c}}
-\newlabel{fig:paretoComparison}{{5d}{8}}
+\newlabel{fig:paretoComparison}{{6d}{7}}
 \newlabel{sub@fig:paretoComparison}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Performance comparison on various data sets.\relax }}{8}}
-\newlabel{fig:performanceComparison}{{5}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Performance comparison on Twitter}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Performance comparison on web-BerkStan}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Performance comparison on Google}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Performance comparison on Pareto}}}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Parameters Evaluation}{8}}
-\newlabel{fig:twitterRatio}{{6a}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Performance comparison on various data sets.\relax }}{7}}
+\newlabel{fig:performanceComparison}{{6}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Performance comparison on Twitter}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Performance comparison on web-BerkStan}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Performance comparison on Google}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Performance comparison on Pareto}}}{7}}
+\newlabel{fig:twitterRatio}{{7a}{8}}
 \newlabel{sub@fig:twitterRatio}{{(a)}{a}}
-\newlabel{fig:webRatio}{{6b}{9}}
+\newlabel{fig:webRatio}{{7b}{8}}
 \newlabel{sub@fig:webRatio}{{(b)}{b}}
-\newlabel{fig:googleRatio}{{6c}{9}}
+\newlabel{fig:googleRatio}{{7c}{8}}
 \newlabel{sub@fig:googleRatio}{{(c)}{c}}
-\newlabel{fig:paretoRatio}{{6d}{9}}
+\newlabel{fig:paretoRatio}{{7d}{8}}
 \newlabel{sub@fig:paretoRatio}{{(d)}{d}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Ratio test on various data sets.\relax }}{9}}
-\newlabel{fig:ratio}{{6}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Ratio test on Twitter}}}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Ratio test on web-BerkStan}}}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Ratio test on Google}}}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Ratio test on Pareto}}}{9}}
-\newlabel{fig: CMPara}{{\caption@xref {fig: CMPara}{ on input line 85}}{9}}
-\newlabel{fig:CMTime}{{7a}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Ratio test on various data sets.\relax }}{8}}
+\newlabel{fig:ratio}{{7}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Ratio test on Twitter}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Ratio test on web-BerkStan}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Ratio test on Google}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Ratio test on Pareto}}}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Parameters Evaluation}{8}}
+\newlabel{fig: CMPara}{{\caption@xref {fig: CMPara}{ on input line 91}}{8}}
+\newlabel{fig:CMTime}{{8a}{8}}
 \newlabel{sub@fig:CMTime}{{(a)}{a}}
-\newlabel{fig:CMMem}{{7b}{9}}
+\newlabel{fig:CMMem}{{8b}{8}}
 \newlabel{sub@fig:CMMem}{{(b)}{b}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Runtime and memroy usage with different width of the CM sketch.\relax }}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Runtime with different width}}}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage with different width}}}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Phase Evaluation}{9}}
-\newlabel{fig: PhaseEvaluation}{{\caption@xref {fig: PhaseEvaluation}{ on input line 99}}{9}}
-\newlabel{fig:TimePercentage}{{8a}{9}}
-\newlabel{sub@fig:TimePercentage}{{(a)}{a}}
-\newlabel{fig:MemPhase}{{8b}{9}}
-\newlabel{sub@fig:MemPhase}{{(b)}{b}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Runtime and memroy usage comparison between each phase.\relax }}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Time percentage of each phase}}}{9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage of each phase}}}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Runtime and memory usage with different width of the CM sketch.\relax }}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Runtime with different width}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage with different width}}}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Phase Evaluation}{8}}
 \bibstyle{IEEEtran}
 \bibdata{bibfile}
 \bibcite{gray1997data}{1}
@@ -172,4 +153,13 @@
 \bibcite{Box1986An}{26}
 \bibcite{Gen2000Network}{27}
 \bibcite{10.1007/978-3-540-24698-5_7}{28}
-\@writefile{toc}{\contentsline {section}{References}{10}}
+\newlabel{fig: PhaseEvaluation}{{\caption@xref {fig: PhaseEvaluation}{ on input line 104}}{9}}
+\newlabel{fig:TimePercentage}{{9a}{9}}
+\newlabel{sub@fig:TimePercentage}{{(a)}{a}}
+\newlabel{fig:MemPhase}{{9b}{9}}
+\newlabel{sub@fig:MemPhase}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Runtime and memory usage comparison between each phase.\relax }}{9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Time percentage of each phase}}}{9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Memory usage of each phase}}}{9}}
+\@writefile{toc}{\contentsline {section}{References}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{9}}
